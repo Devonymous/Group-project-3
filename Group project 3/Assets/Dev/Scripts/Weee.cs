@@ -6,16 +6,37 @@ public class Weee : MonoBehaviour
 {
     [SerializeField]
     Rigidbody rb;
-    // Start is called before the first frame update
+    Vector3 test;
+    GameObject Target;
+    float change = 2;
+    float speed = 10;
+    float step;
     void Start()
     {
+        test = new Vector3(Random.Range(-50,50),Random.Range(-50,50),Random.Range(-50,50));
         rb = GetComponent<Rigidbody>();
+        Target = GameObject.FindGameObjectWithTag("Target");
+        transform.position = new Vector3(Random.Range(-50,50),Random.Range(-50,50),Random.Range(-50,50));
+        step = speed * Time.deltaTime;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        var Weee = new Vector3(5,3,2);
-        rb.angularVelocity = Weee;
+        Move();
+        if (Time.time > change)
+        {
+            Change();
+        }
+        rb.angularVelocity = test;
+
+    }
+    void Move()
+    {
+        step = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, Target.transform.position, step);
+    }
+    void Change()
+    {
+        test = new Vector3(Random.Range(-50,50),Random.Range(-50,50),Random.Range(-50,50));
+        change = Time.time + 2;
     }
 }
