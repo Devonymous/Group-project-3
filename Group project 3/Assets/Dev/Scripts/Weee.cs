@@ -7,12 +7,13 @@ public class Weee : MonoBehaviour
     [SerializeField]
     Rigidbody rb;
     Vector3 test;
-    GameObject Target;
+    GameObject Target,cam;
     MeshRenderer rend;
-    float change = 2,speed = 10,step;
+    [SerializeField] float change = 2,speed = 5,step,scalesize;
     public Material[] colors = new Material[5];
     void Start()
     {
+        cam = GameObject.FindGameObjectWithTag("MainCamera");
         rend = GetComponent<MeshRenderer>();
         test = new Vector3(Random.Range(-50,50),Random.Range(-50,50),Random.Range(-50,50));
         rb = GetComponent<Rigidbody>();
@@ -23,6 +24,8 @@ public class Weee : MonoBehaviour
     }
     void Update()
     {
+        scalesize = Target.transform.localScale.x;
+        speed = (scalesize / 2) + 3;
         Move();
         if (Time.time > change)
         {
@@ -37,7 +40,9 @@ public class Weee : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, Target.transform.position, step);
         if (transform.position == Target.transform.position)
         {
-            transform.position = new Vector3(Random.Range(-50,50),Random.Range(-50,50),Random.Range(-50,50));
+            cam.transform.position -= new Vector3(0,0,0.05f);
+            Target.transform.localScale += new Vector3(0.05f,0.05f,0.05f);
+            transform.position = new Vector3(Random.Range(-50 - scalesize, 50  + scalesize), Random.Range(-50 - scalesize, 50  + scalesize), Random.Range(-50 - scalesize, 50  + scalesize));
         }
     }
     void Change()

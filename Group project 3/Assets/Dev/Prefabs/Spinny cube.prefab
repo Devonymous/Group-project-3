@@ -126,6 +126,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  change: 2
+  speed: 7
+  step: 0
   colors:
   - {fileID: 2100000, guid: cf94b00e55b792d4283f973c4bfa1ebd, type: 2}
   - {fileID: 2100000, guid: 88645399d4619ce4199c296f68a5583f, type: 2}
