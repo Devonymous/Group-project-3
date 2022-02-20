@@ -33,6 +33,10 @@ public class Weee : MonoBehaviour
     {
         step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, Target.transform.position, step);
+        if (transform.position == Target.transform.position)
+        {
+            transform.position = new Vector3(Random.Range(-50,50),Random.Range(-50,50),Random.Range(-50,50));
+        }
     }
     void Change()
     {
