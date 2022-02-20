@@ -8,16 +8,18 @@ public class Weee : MonoBehaviour
     Rigidbody rb;
     Vector3 test;
     GameObject Target;
-    float change = 2;
-    float speed = 10;
-    float step;
+    MeshRenderer rend;
+    float change = 2,speed = 10,step;
+    public Material[] colors = new Material[5];
     void Start()
     {
+        rend = GetComponent<MeshRenderer>();
         test = new Vector3(Random.Range(-50,50),Random.Range(-50,50),Random.Range(-50,50));
         rb = GetComponent<Rigidbody>();
         Target = GameObject.FindGameObjectWithTag("Target");
         transform.position = new Vector3(Random.Range(-50,50),Random.Range(-50,50),Random.Range(-50,50));
         step = speed * Time.deltaTime;
+        rend.material = colors[Random.Range(0,5)];
     }
     void Update()
     {

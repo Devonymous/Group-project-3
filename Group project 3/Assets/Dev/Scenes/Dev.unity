@@ -3927,7 +3927,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 148.31288
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -3952,13 +3952,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 2, z: -4}
+  m_LocalRotation: {x: 0.08419155, y: -0.42785126, z: 0.04006716, w: 0.8990271}
+  m_LocalPosition: {x: 13.73, y: 4.025, z: -11.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10.7, y: -50.9, z: 0}
 --- !u!1001 &970335327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7338,6 +7338,18 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2384793483521639446, guid: d9e8cb2c32d2edd4ca030101fa0252a5, type: 3}
+      propertyPath: colors.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cf94b00e55b792d4283f973c4bfa1ebd, type: 2}
+    - target: {fileID: 2384793483521639446, guid: d9e8cb2c32d2edd4ca030101fa0252a5, type: 3}
+      propertyPath: colors.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 88645399d4619ce4199c296f68a5583f, type: 2}
+    - target: {fileID: 2384793483521639446, guid: d9e8cb2c32d2edd4ca030101fa0252a5, type: 3}
+      propertyPath: colors.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: ae0d28a0ebac0ce4e820d9be0bd32b7d, type: 2}
     - target: {fileID: 2384793483521639449, guid: d9e8cb2c32d2edd4ca030101fa0252a5, type: 3}
       propertyPath: m_Name
       value: Cube (18)
