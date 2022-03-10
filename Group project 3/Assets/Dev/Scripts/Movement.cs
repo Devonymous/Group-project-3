@@ -17,10 +17,14 @@ public class Movement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    public GameObject wallprefab;
 
     float turnSmoothVelocity;
     public float turnSmoothTime = 0.1f;
-    public int Doublejump = 0;
+    public static int Doublejump = 0;
+    float timer = 0f;
+    public GameObject test;
+    GameObject spawn;
     void Start()
     {
         Cursor.visible = false;
@@ -28,12 +32,22 @@ public class Movement : MonoBehaviour
         Sprint = speed * 2;
         Walk = speed;
         Particles = GetComponent<ParticleSystem>();
+        spawn = GameObject.FindGameObjectWithTag("Spawn");
     }
     void Update()
     {
         Jump();
         Gravity();
         Move();
+        Wall();
+    }
+    void Wall()
+    {
+        if (Input.GetKeyDown(KeyCode.M) && timer < Time.time)
+        {
+            timer = Time.time + 5;
+            Instantiate(wallprefab, spawn.transform.position, transform.rotation);
+        }
     }
     void Jump()
     {
@@ -53,6 +67,13 @@ public class Movement : MonoBehaviour
                 Doublejump++;
                 velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
             }
+        }
+        if (Doublejump == 1)
+        {
+            test.SetActive(true);
+        } else
+        {
+            test.SetActive(false);
         }
     }
     void Gravity()
