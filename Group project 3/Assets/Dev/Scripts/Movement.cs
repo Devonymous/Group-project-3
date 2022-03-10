@@ -20,6 +20,7 @@ public class Movement : MonoBehaviour
 
     float turnSmoothVelocity;
     public float turnSmoothTime = 0.1f;
+    public int Doublejump = 0;
     void Start()
     {
         Cursor.visible = false;
@@ -36,14 +37,22 @@ public class Movement : MonoBehaviour
     }
     void Jump()
     {
+        if (isGrounded)
+        {
+            Doublejump = 0;
+        }
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump"))
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+            if (Doublejump < 1)
+            {
+                Doublejump++;
+                velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+            }
         }
     }
     void Gravity()
