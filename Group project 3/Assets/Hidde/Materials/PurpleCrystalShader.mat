@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PurpleCrystalShader
+  m_Shader: {fileID: -6465566751694194690, guid: f687c20636a308843b001d7b63931060, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_66017149de944655b0877f3f2c2b1853: 0
+    - Vector1_d604ad2fce86499ca18a74153989d6e6: 0.802
+    m_Colors:
+    - Color_aae45465beb641beb9d476812c70159c: {r: 1.68088, g: 0, b: 3.2429116, a: 1}
+    - Color_b95f7ab8c2e34d12b7a0130ce7cb321a: {r: 0.43056872, g: 0.37814167, b: 0.4433962, a: 1}
+    - Color_fa419809c7a94b488fd9e3e6ff1c1dc0: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
