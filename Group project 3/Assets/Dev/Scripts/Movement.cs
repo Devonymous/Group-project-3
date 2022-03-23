@@ -25,6 +25,7 @@ public class Movement : MonoBehaviour
     float timer = 0f;
     public GameObject test;
     GameObject spawn;
+    public Animator animator;
     void Start()
     {
         Cursor.visible = false;
@@ -36,9 +37,16 @@ public class Movement : MonoBehaviour
     }
     void Update()
     {
-        Jump();
+        if (animator.GetBool("IsOpen") == true)
+        {
+
+        } else {
+            Move();
+            Jump();
+        }
+        
         Gravity();
-        Move();
+        
         Wall();
     }
     void Wall()
