@@ -47822,6 +47822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2cfd31ced3fe842aff2b2434241a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cam: {fileID: 1219478070}
   craftingMenu: {fileID: 1051695038}
 --- !u!43 &1239929410
 Mesh:
