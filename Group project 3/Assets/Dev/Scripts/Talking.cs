@@ -12,7 +12,7 @@ public class Talking : MonoBehaviour
     
     void Update()
     {
-        if(Trigger)
+        if(Trigger == true)
         {
             NPC_text.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
@@ -23,12 +23,7 @@ public class Talking : MonoBehaviour
                 test.TriggerDialogue();
                 
             }
-        } else {
-            NPC_text.SetActive(false);
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-
+        } 
     }
 
     void OnTriggerEnter(Collider other)
@@ -46,6 +41,9 @@ public class Talking : MonoBehaviour
         {
             Trigger = false;
             NPC_Trigger = null;
+            NPC_text.SetActive(false);
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 

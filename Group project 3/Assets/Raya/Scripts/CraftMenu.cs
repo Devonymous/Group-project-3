@@ -7,6 +7,7 @@ public class CraftMenu : MonoBehaviour
 {
     public GameObject Cam;
     public GameObject craftingMenu;
+    public bool Open_inv = false;
    // private GameObject player;
 
 
@@ -17,26 +18,30 @@ public class CraftMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            //Cursor.visible = true;
-            //Cursor.lockState = CursorLockMode.Confined;
-            //Time.timeScale = 0f;
-            //player.SetActive(false);
-            //craftingMenu.SetActive(true);
-            OpenCraftMenu();
-        }
+        OpenCraftMenu();
+        
     }
 
     public void OpenCraftMenu()
     {
-        if (craftingMenu != null)
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Open_inv = !Open_inv;     
+        }
+        if (Open_inv == true)
         {
             Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.lockState = CursorLockMode.None;
             //Time.timeScale = 0f;
             Cam.SetActive(false);
             craftingMenu.SetActive(true);
+        } else if (Open_inv == false)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            //Time.timeScale = 0f;
+            Cam.SetActive(true);
+            craftingMenu.SetActive(false);
         }
     }
 }

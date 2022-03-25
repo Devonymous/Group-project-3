@@ -26,6 +26,7 @@ public class Movement : MonoBehaviour
     public GameObject test;
     GameObject spawn;
     public Animator animator;
+    public CraftMenu craftmenu;
     void Start()
     {
         Cursor.visible = false;
@@ -34,10 +35,11 @@ public class Movement : MonoBehaviour
         Walk = speed;
         Particles = GetComponent<ParticleSystem>();
         spawn = GameObject.FindGameObjectWithTag("Spawn");
+        craftmenu = GetComponent<CraftMenu>();
     }
     void Update()
     {
-        if (animator.GetBool("IsOpen") == true)
+        if (animator.GetBool("IsOpen") == true || craftmenu.Open_inv == true)
         {
 
         } else {
