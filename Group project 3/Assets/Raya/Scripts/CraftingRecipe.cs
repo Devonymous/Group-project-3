@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class CraftingRecipe : MonoBehaviour
 {
-	public Sprite speedP; 
-	public Sprite jumpP;
+	public Sprite potionResult; 
 
 	public Button potion;
 
@@ -18,6 +17,6 @@ public class CraftingRecipe : MonoBehaviour
 
 	void TaskOnClick()
 	{
-		GetComponent<Image>().sprite = speedP;
+		GetComponent<Image>().sprite = potionResult;
 	}
 }
