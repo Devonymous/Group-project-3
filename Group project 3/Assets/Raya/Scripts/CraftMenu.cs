@@ -18,7 +18,9 @@ public class CraftMenu : MonoBehaviour
 
     private void Update()
     {
-        OpenCraftMenu();
+        if (Input.GetKeyDown(KeyCode.C)) {
+            OpenCraftMenu();
+        }
         
     }
 

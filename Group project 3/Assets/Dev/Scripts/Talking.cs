@@ -21,7 +21,6 @@ public class Talking : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 var test = NPC_Trigger.GetComponent<NPC>();
                 test.TriggerDialogue();
-                
             }
         } 
     }
