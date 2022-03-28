@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour
 {
     public GameObject inven;
     bool Open_inv = false;
+    public InvenManager _Inventory;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             Inven();
+
         }
     }
 
@@ -34,6 +36,7 @@ public class Inventory : MonoBehaviour
         }
         else
         {
+            _Inventory.Listitems();
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.Confined;
             inven.SetActive(true);

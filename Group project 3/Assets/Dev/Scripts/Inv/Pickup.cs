@@ -7,9 +7,11 @@ public class Pickup : MonoBehaviour
     public bool Pickup_able = false;
     public GameObject Herb;
     public GameObject UI_e;
+    public ItemController ItemData;
     void Update()
     {
         _Pickup();
+        
     }
 
     public void _Pickup()
@@ -18,6 +20,8 @@ public class Pickup : MonoBehaviour
         {
             if (Pickup_able == true) 
             {
+                ItemData = Herb.GetComponent<ItemController>();
+                ItemData.Pickup();
                 Destroy(Herb);
                 Herb = null;
                 UI_e.SetActive(false);

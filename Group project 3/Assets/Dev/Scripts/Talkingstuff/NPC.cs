@@ -18,6 +18,7 @@ public class NPC : MonoBehaviour
     {
         if ((Player.transform.position-this.transform.position).sqrMagnitude<2.6*2.6) 
         {
+            
             var lookPos = Player.transform.position - transform.position;
             lookPos.y = 0;
             var rotation = Quaternion.LookRotation(lookPos);
