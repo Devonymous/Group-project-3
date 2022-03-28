@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2089950066746886194}
   - component: {fileID: 3075717848963712919}
   - component: {fileID: 958090653674206045}
+  - component: {fileID: 2526197432105775017}
   m_Layer: 0
   m_Name: Sugarcanes (1)
-  m_TagString: Untagged
+  m_TagString: Herb & Gem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,6 +85,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2526197432105775017
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606428474244911752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9024125065016951936, guid: 77d4dd323f833be40901a323039b4c41, type: 3}
 --- !u!1 &4691326595568166245
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,9 +110,12 @@ GameObject:
   - component: {fileID: 5355096626167726047}
   - component: {fileID: 9078970524961452154}
   - component: {fileID: 6492515964196832432}
+  - component: {fileID: -7683920344729895816}
+  - component: {fileID: -8688739793992684142}
+  - component: {fileID: 1711599951823520927}
   m_Layer: 0
   m_Name: High sugar cane
-  m_TagString: Untagged
+  m_TagString: Herb & Gem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,3 +187,43 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-7683920344729895816
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4691326595568166245}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9024125065016951936, guid: 77d4dd323f833be40901a323039b4c41, type: 3}
+--- !u!135 &-8688739793992684142
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4691326595568166245}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.05
+  m_Center: {x: -0.0018570422, y: 0.0005864034, z: 0.04}
+--- !u!135 &1711599951823520927
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4691326595568166245}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.05
+  m_Center: {x: -0.0018570422, y: 0.0005864034, z: 0.12}

@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 2136981180569758039}
   - component: {fileID: 3028616439436224242}
   - component: {fileID: 1000707120935588408}
+  - component: {fileID: 4377290985648138663}
+  - component: {fileID: 6232260301365700425}
   m_Layer: 0
   m_Name: Blue crystal
-  m_TagString: Untagged
+  m_TagString: Herb & Gem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,3 +83,30 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4377290985648138663
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649379193042924525}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4294523711905448709, guid: 8024b16e1e6f6a246877a5706cc2292e, type: 3}
+--- !u!135 &6232260301365700425
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649379193042924525}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.035
+  m_Center: {x: 0.006706454, y: 0.0063436385, z: 0.014849914}

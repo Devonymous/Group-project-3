@@ -11,9 +11,12 @@ GameObject:
   - component: {fileID: 7298526907554471214}
   - component: {fileID: 8258472159374190336}
   - component: {fileID: 6849842716348539402}
+  - component: {fileID: -4718840824582689462}
+  - component: {fileID: -4348887939641578357}
+  - component: {fileID: 1390959948046989649}
   m_Layer: 0
   m_Name: Low sugar cane
-  m_TagString: Untagged
+  m_TagString: Herb & Gem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,3 +87,43 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-4718840824582689462
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5581223701101549910}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9024125065016951936, guid: 77d4dd323f833be40901a323039b4c41, type: 3}
+--- !u!135 &-4348887939641578357
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5581223701101549910}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.05
+  m_Center: {x: -0.0018570422, y: 0.0005864034, z: 0.04}
+--- !u!135 &1390959948046989649
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5581223701101549910}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.03
+  m_Center: {x: -0.0018570422, y: 0.0005864034, z: 0.09}
