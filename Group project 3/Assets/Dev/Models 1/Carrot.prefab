@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7523013797177253839}
   - component: {fileID: -5534359504111922734}
   - component: {fileID: -1275059733783127165}
+  - component: {fileID: -7324013265750938142}
   m_Layer: 0
   m_Name: Carrot
   m_TagString: Herb & Gem
@@ -112,3 +113,16 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.025
   m_Center: {x: 0, y: 0, z: 0.014849914}
+--- !u!114 &-7324013265750938142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8315862904837733914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a44229c21aace4cb9bbbce9451fc1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 11400000, guid: 10b2c7ca46b9d544cb8ef44b985892ad, type: 2}
