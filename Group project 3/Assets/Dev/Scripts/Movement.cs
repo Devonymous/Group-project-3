@@ -12,7 +12,8 @@ public class Movement : MonoBehaviour
 
     public float speed = 7,gravity = -19.62f,jumpHeight = 3, Sprint,Walk, P_rate;
     Vector3 velocity;
-    bool isGrounded;
+    bool isGrounded,isRunning;
+    
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -121,13 +122,9 @@ public class Movement : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.LeftShift)) // sprint
             {
-                /*if (moving.GetCurrentAnimatorStateInfo(0).IsName("Run"))
-                {
-                    moving.speed = 1.6f;
-                } */
             speed = Sprint;
             em.enabled = true;
-            moving.SetBool("IsRunning", true);
+            isRunning = true;
             }
             moving.speed = 1f;
         } else {
@@ -137,7 +134,13 @@ public class Movement : MonoBehaviour
         {
             speed = Walk;
             em.enabled = false;
-            moving.SetBool("IsRunning", false);
+            isRunning = false;
+        }
+        if (moving.GetCurrentAnimatorStateInfo(0).IsTag("1") == true && isRunning == true)
+        {
+            moving.speed = 1.6f;
+        } else {
+            moving.speed = 1f;
         }
     }
 
