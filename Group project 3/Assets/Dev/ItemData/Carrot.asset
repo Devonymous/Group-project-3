@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 3
   itemName: Carrot
   value: 0
-  icon: {fileID: 21300000, guid: b23704af291eef94891eb5d26d6a8e2d, type: 3}
+  icon: {fileID: 21300000, guid: 189b501890f756940a50dbae7a7bfe3b, type: 3}

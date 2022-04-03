@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c671f5b84d81df840b8c867840352b9e, type: 3}
-  m_Name: Sugarcan
+  m_Name: Coffee plant
   m_EditorClassIdentifier: 
-  id: 2
-  itemName: SugarCane
+  id: 6
+  itemName: Coffee plant
   value: 0
-  icon: {fileID: 21300000, guid: c972d1e2cefab984cb6989b4516be9a4, type: 3}
+  icon: {fileID: 21300000, guid: ce6be31c8318233409a89c410b8c8a04, type: 3}

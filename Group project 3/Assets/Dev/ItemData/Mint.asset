@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c671f5b84d81df840b8c867840352b9e, type: 3}
-  m_Name: Sugarcan
+  m_Name: Mint
   m_EditorClassIdentifier: 
-  id: 2
-  itemName: SugarCane
+  id: 5
+  itemName: Mint
   value: 0
-  icon: {fileID: 21300000, guid: c972d1e2cefab984cb6989b4516be9a4, type: 3}
+  icon: {fileID: 21300000, guid: f4c34832694d1444e99c7533b4875d87, type: 3}

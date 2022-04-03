@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     public Transform cam;
     private ParticleSystem Particles;
 
-    public float speed = 7,gravity = -9.81f,jumpHeight = 3, Sprint,Walk, P_rate;
+    public float speed = 7,gravity = -19.62f,jumpHeight = 3, Sprint,Walk, P_rate;
     Vector3 velocity;
     bool isGrounded;
 
@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     public static int Doublejump = 0;
     float timer = 0f;
-    public GameObject test;
+    public GameObject Jump_particles;
     GameObject spawn;
     public Animator animator, moving;
     public CraftMenu craftmenu;
@@ -61,29 +61,37 @@ public class Movement : MonoBehaviour
     }
     void Jump()
     {
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (isGrounded)
         {
             Doublejump = 0;
+            gravity = -19.62f;
+        } else {
+            gravity = gravity + (gravity * 0.003f);
         }
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
         if (Input.GetButtonDown("Jump"))
         {
-            if (Doublejump < 1)
-            {
-                Doublejump++;
+            if(Doublejump == 0) // 1st jump
+            { 
                 velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+                Doublejump++;
+            }
+            if (!isGrounded && Doublejump == 1) // 2nd jump
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+                Doublejump++;
             }
         }
-        if (Doublejump == 1)
+        if (Doublejump == 2)
         {
-            test.SetActive(true);
+            Jump_particles.SetActive(true);
         } else
         {
-            test.SetActive(false);
+            Jump_particles.SetActive(false);
         }
     }
     void Gravity()

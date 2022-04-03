@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pickup : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Pickup : MonoBehaviour
     public GameObject Herb;
     public GameObject UI_e;
     public ItemController ItemData;
+    Text Show_text;
     void Update()
     {
         _Pickup();
@@ -36,6 +38,8 @@ public class Pickup : MonoBehaviour
         {
             Pickup_able = true;
             UI_e.SetActive(true);
+            Show_text = UI_e.GetComponent<Text>();
+            Show_text.text = "Pickup";
             Herb = Other.gameObject; 
         }
     }

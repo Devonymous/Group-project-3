@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: -7683920344729895816}
   - component: {fileID: -8688739793992684142}
   - component: {fileID: 1711599951823520927}
+  - component: {fileID: 270878492207663737}
   m_Layer: 0
   m_Name: High sugar cane
   m_TagString: Herb & Gem
@@ -227,3 +228,16 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.05
   m_Center: {x: -0.0018570422, y: 0.0005864034, z: 0.12}
+--- !u!114 &270878492207663737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4691326595568166245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a44229c21aace4cb9bbbce9451fc1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 11400000, guid: 50c793153b461f8459b9ac03f8c7f4ec, type: 2}
