@@ -8595,6 +8595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inven: {fileID: 0}
+  _Inventory: {fileID: 0}
 --- !u!143 &855877646
 CharacterController:
   m_ObjectHideFlags: 0
@@ -8661,6 +8662,7 @@ MonoBehaviour:
   turnSmoothTime: 0.1
   test: {fileID: 1500948157}
   animator: {fileID: 1021445267}
+  moving: {fileID: 0}
   craftmenu: {fileID: 855877644}
 --- !u!1001 &876187646
 PrefabInstance:
@@ -10668,7 +10670,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1127464341}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.3333333, z: -10}
+  m_LocalPosition: {x: 0, y: 3.333333, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2102437097}
@@ -20757,7 +20759,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102437095}
-  m_LocalRotation: {x: 0.22975291, y: -0.000000016746089, z: 0.0000000039532155, w: 0.973249}
+  m_LocalRotation: {x: 0.22975291, y: 0.000000016746096, z: -0.0000000039532173, w: 0.973249}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
