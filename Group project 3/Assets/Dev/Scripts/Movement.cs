@@ -72,16 +72,20 @@ public class Movement : MonoBehaviour
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
+            moving.SetBool("IsJumping", false);
+            moving.SetBool("IsDouble", false);
         }
         if (Input.GetButtonDown("Jump"))
         {
             if(Doublejump == 0) // 1st jump
             { 
+                moving.SetBool("IsJumping", true);
                 velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
                 Doublejump++;
             }
             if (!isGrounded && Doublejump == 1) // 2nd jump
             {
+                moving.SetBool("IsDouble", true);
                 velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
                 Doublejump++;
             }
@@ -101,31 +105,39 @@ public class Movement : MonoBehaviour
     }
     void Move()
     {
+        var em = Particles.emission;
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
         if(direction.magnitude >= 0.1f)
         {
+            
             moving.SetBool("IsWalking", true);
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
-        } else {
-            moving.SetBool("IsWalking", false);
-        }
-        var em = Particles.emission;
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
+
+            if (Input.GetKeyDown(KeyCode.LeftShift)) // sprint
+            {
+                /*if (moving.GetCurrentAnimatorStateInfo(0).IsName("Run"))
+                {
+                    moving.speed = 1.6f;
+                } */
             speed = Sprint;
             em.enabled = true;
+            moving.SetBool("IsRunning", true);
+            }
+            moving.speed = 1f;
+        } else {
+            moving.SetBool("IsWalking", false);
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             speed = Walk;
             em.enabled = false;
+            moving.SetBool("IsRunning", false);
         }
     }
 

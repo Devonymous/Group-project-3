@@ -37,16 +37,16 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 680175140559436795}
-    m_Position: {x: 200, y: 0, z: 0}
+    m_Position: {x: 260, y: -30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5509170285200538614}
-    m_Position: {x: 235, y: 65, z: 0}
+    m_Position: {x: 360, y: 50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4795547910794937459}
-    m_Position: {x: 270, y: 130, z: 0}
+    m_Position: {x: 350, y: 130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5743024786639009288}
-    m_Position: {x: 305, y: 195, z: 0}
+    m_Position: {x: 340, y: 230, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -115,7 +115,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MainCharAnimated
+  m_Name: MainCharAnimated 1
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
