@@ -8,6 +8,7 @@ TagManager:
   - Inventory
   - Spawn
   - NPC
+  - Herb & Gem
   layers:
   - Default
   - TransparentFX
@@ -47,4 +48,10 @@ TagManager:
     locked: 0
   - name: FogOfWar
     uniqueID: 354819585
+    locked: 0
+  - name: UIBackground
+    uniqueID: 2670891705
+    locked: 0
+  - name: UISlots
+    uniqueID: 2154498401
     locked: 0

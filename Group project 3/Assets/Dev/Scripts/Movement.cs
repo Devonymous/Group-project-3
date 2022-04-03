@@ -10,9 +10,10 @@ public class Movement : MonoBehaviour
     public Transform cam;
     private ParticleSystem Particles;
 
-    public float speed = 7,gravity = -9.81f,jumpHeight = 3, Sprint,Walk, P_rate;
+    public float speed = 7,gravity = -19.62f,jumpHeight = 3, Sprint,Walk, P_rate;
     Vector3 velocity;
-    bool isGrounded;
+    bool isGrounded,isRunning;
+    
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -23,9 +24,10 @@ public class Movement : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     public static int Doublejump = 0;
     float timer = 0f;
-    public GameObject test;
+    public GameObject Jump_particles;
     GameObject spawn;
-    public Animator animator;
+    public Animator animator, moving;
+    public CraftMenu craftmenu;
     void Start()
     {
         Cursor.visible = false;
@@ -34,10 +36,11 @@ public class Movement : MonoBehaviour
         Walk = speed;
         Particles = GetComponent<ParticleSystem>();
         spawn = GameObject.FindGameObjectWithTag("Spawn");
+        craftmenu = GetComponent<CraftMenu>();
     }
     void Update()
     {
-        if (animator.GetBool("IsOpen") == true)
+        if (animator.GetBool("IsOpen") == true || craftmenu.Open_inv == true)
         {
 
         } else {
@@ -59,29 +62,41 @@ public class Movement : MonoBehaviour
     }
     void Jump()
     {
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (isGrounded)
         {
             Doublejump = 0;
+            gravity = -19.62f;
+        } else {
+            gravity = gravity + (gravity * 0.003f);
         }
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
+            moving.SetBool("IsJumping", false);
+            moving.SetBool("IsDouble", false);
         }
         if (Input.GetButtonDown("Jump"))
         {
-            if (Doublejump < 1)
-            {
-                Doublejump++;
+            if(Doublejump == 0) // 1st jump
+            { 
+                moving.SetBool("IsJumping", true);
                 velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+                Doublejump++;
+            }
+            if (!isGrounded && Doublejump == 1) // 2nd jump
+            {
+                moving.SetBool("IsDouble", true);
+                velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+                Doublejump++;
             }
         }
-        if (Doublejump == 1)
+        if (Doublejump == 2)
         {
-            test.SetActive(true);
+            Jump_particles.SetActive(true);
         } else
         {
-            test.SetActive(false);
+            Jump_particles.SetActive(false);
         }
     }
     void Gravity()
@@ -91,28 +106,41 @@ public class Movement : MonoBehaviour
     }
     void Move()
     {
+        var em = Particles.emission;
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
         if(direction.magnitude >= 0.1f)
         {
+            
+            moving.SetBool("IsWalking", true);
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
-        }
-        var em = Particles.emission;
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
+
+            if (Input.GetKeyDown(KeyCode.LeftShift)) // sprint
+            {
             speed = Sprint;
             em.enabled = true;
+            isRunning = true;
+            }
+            moving.speed = 1f;
+        } else {
+            moving.SetBool("IsWalking", false);
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             speed = Walk;
             em.enabled = false;
+            isRunning = false;
+        }
+        if (moving.GetCurrentAnimatorStateInfo(0).IsTag("1") == true && isRunning == true)
+        {
+            moving.speed = 1.6f;
+        } else {
+            moving.speed = 1f;
         }
     }
 

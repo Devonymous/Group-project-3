@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Hidde/Scenes/Hidde.unity
+    guid: cd6a8edbe7dd53f4bb93bd2cd2cc4246
   m_configObjects: {}

@@ -45,10 +45,11 @@ Shader "Hidden/FOW"
             sampler2D _MainTex;
             sampler2D _SecondaryTex;
 
-            fixed4 frag (v2f i) : SV_Target
+            fixed4 frag(v2f i) : SV_Target
             {
-                fixed4 col = tex2D(_MainTex, i.uv) + tex2D(_SecondaryTex, i.uv);
-                col.a = 2.0f - col.r * 1.5f - col.b * 0.5f;
+                fixed4 col = tex2D(_MainTex, i.uv);// +tex2D(_SecondaryTex, i.uv);
+                //col.a = 2.0f - col.r * 1.5f - col.b * 0.5f;
+                col.a = 1.0f - col.a;
                 return fixed4(0,0,0,col.a);
             }
             ENDCG
