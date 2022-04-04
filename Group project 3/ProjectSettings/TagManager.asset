@@ -9,6 +9,9 @@ TagManager:
   - Spawn
   - NPC
   - Herb & Gem
+  - Cube
+  - Point1
+  - Point2
   layers:
   - Default
   - TransparentFX

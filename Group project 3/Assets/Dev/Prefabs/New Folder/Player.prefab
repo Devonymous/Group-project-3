@@ -5157,7 +5157,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  wallprefab: {fileID: 8808481696372890705, guid: eeed06a4249db5e46a98ab1e76965377, type: 3}
+  Cube: {fileID: 0}
   turnSmoothTime: 0.1
   Jump_particles: {fileID: 5277625550999380349}
   animator: {fileID: 0}
@@ -10461,7 +10461,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5277625552386054443}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 7.01}
+  m_LocalPosition: {x: 0, y: 0, z: 2.216}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5277625551431203139}

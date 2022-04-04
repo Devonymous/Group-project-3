@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     public Transform cam;
     private ParticleSystem Particles;
 
-    public float speed = 7,gravity = -19.62f,jumpHeight = 3, Sprint,Walk, P_rate;
+    public float speed = 10,gravity = -19.62f,jumpHeight = 3, Sprint,Walk, P_rate;
     Vector3 velocity;
     bool isGrounded,isRunning;
     
@@ -18,12 +18,11 @@ public class Movement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
-    public GameObject wallprefab;
+    public GameObject Cube;
 
     float turnSmoothVelocity;
     public float turnSmoothTime = 0.1f;
     public static int Doublejump = 0;
-    float timer = 0f;
     public GameObject Jump_particles;
     GameObject spawn;
     public Animator animator, moving;
@@ -54,10 +53,9 @@ public class Movement : MonoBehaviour
     }
     void Wall()
     {
-        if (Input.GetKeyDown(KeyCode.M) && timer < Time.time)
+        if (Input.GetKeyDown(KeyCode.M))
         {
-            timer = Time.time + 5;
-            Instantiate(wallprefab, spawn.transform.position, transform.rotation);
+            Instantiate(Cube, spawn.transform.position, transform.rotation);
         }
     }
     void Jump()
