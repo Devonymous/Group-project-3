@@ -12,6 +12,7 @@ TagManager:
   - Cube
   - Point1
   - Point2
+  - Potion
   layers:
   - Default
   - TransparentFX

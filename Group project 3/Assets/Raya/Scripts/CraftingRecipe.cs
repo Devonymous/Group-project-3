@@ -2,21 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
 
 public class CraftingRecipe : MonoBehaviour
 {
-	public Sprite potionResult; 
+	public Image potionResult; 
 
-	public Button potion;
+	public Button potionSpeed, potionJump;
+	public Sprite iconPotion, iconSpeed, iconJump;
+
+	public InvenManager im;
 
 	void Start()
 	{
-		Button btn = potion.GetComponent<Button>();
-		btn.onClick.AddListener(TaskOnClick);
+		//Button btn = GameObject.Find("Jump Potion Button").GetComponent<Button>();
+		potionSpeed.onClick.AddListener(SpeedPotion);
+		potionJump.onClick.AddListener(JumpPotion);
 	}
 
-	void TaskOnClick()
+
+	void SpeedPotion()
+    {
+		if (im.countPCrystal > 0 && im.countBCrystal > 0)
+		{
+			potionResult.sprite = iconSpeed;
+		}
+		else
+		{
+			Debug.Log("RecipeNO");
+		}
+    }
+
+	void JumpPotion()
 	{
-		GetComponent<Image>().sprite = potionResult;
+		if (im.countCarrot > 0 && im.countBCrystal > 0)
+		{
+			potionResult.sprite = iconJump;
+		}
+		else
+		{
+			Debug.Log("RecipeNO");
+		}
 	}
+
 }

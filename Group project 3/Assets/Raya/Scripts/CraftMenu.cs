@@ -8,13 +8,6 @@ public class CraftMenu : MonoBehaviour
     public GameObject Cam;
     public GameObject craftingMenu;
     public bool Open_inv = false;
-   // private GameObject player;
-
-
-    private void Start()
-    {
-       // player = GameObject.Find("Player");
-    }
 
     private void Update()
     {
@@ -34,14 +27,12 @@ public class CraftMenu : MonoBehaviour
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-            //Time.timeScale = 0f;
             Cam.SetActive(false);
             craftingMenu.SetActive(true);
         } else if (Open_inv == false)
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
-            //Time.timeScale = 0f;
             Cam.SetActive(true);
             craftingMenu.SetActive(false);
         }

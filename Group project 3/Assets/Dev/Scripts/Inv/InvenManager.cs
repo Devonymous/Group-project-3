@@ -10,6 +10,9 @@ public class InvenManager : MonoBehaviour
 
     public Transform ItemContent;
     public GameObject InventoryItem;
+
+    public int countPCrystal, countBCrystal, countCarrot, countCoffee, countSCane, countMint, countMushroom;
+
     private void Awake()
     {
         Instance = this;
@@ -18,6 +21,34 @@ public class InvenManager : MonoBehaviour
     public void Add(Item item)
     {
         Items.Add(item);
+        if (item.name == "Purple Crystal")
+        {
+            countPCrystal++;
+        }
+        else if (item.name == "Blue crystal")
+        {
+            countBCrystal++;
+        }
+        else if (item.name == "Carrot")
+        {
+            countCarrot++;
+        }
+        else if (item.name == "Coffee plant")
+        {
+            countCoffee++;
+        }
+        else if (item.name == "SugarCane")
+        {
+            countSCane++;
+        }
+        else if (item.name == "Mint")
+        {
+            countMint++;
+        }
+        else
+        {
+            countMushroom++;
+        }
     }
     public void Remove(Item item)
     {
@@ -36,6 +67,16 @@ public class InvenManager : MonoBehaviour
             var ItemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
 
             Itemname.text = item.itemName;
+            //ingr1++;
+            //ingr2++;
+            //if(Itemname.text == "Purple crystal")
+            //{
+            //    ingr1++;
+            //}
+            //else if (Itemname.text == "Blue crystal")
+            //{
+            //    ingr2++;
+            //}
             ItemIcon.sprite = item.icon;
         }
     }
