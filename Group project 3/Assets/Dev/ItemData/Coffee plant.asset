@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Coffee plant
   value: 0
   icon: {fileID: 21300000, guid: ce6be31c8318233409a89c410b8c8a04, type: 3}
+  count: 0

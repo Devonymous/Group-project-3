@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: SugarCane
   value: 0
   icon: {fileID: 21300000, guid: c972d1e2cefab984cb6989b4516be9a4, type: 3}
+  count: 0

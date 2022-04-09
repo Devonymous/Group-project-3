@@ -6,43 +6,32 @@ using UnityEditor;
 
 public class CraftingRecipe : MonoBehaviour
 {
-	public Image potionResult; 
+	public Image potionResult;
+	public Potion potion;
+    Potion finalPotion;
+    //public Sprite notAvailable;
 
-	public Button potionSpeed, potionJump;
-	public Sprite iconPotion, iconSpeed, iconJump;
-
-	public InvenManager im;
-
-	void Start()
-	{
-		//Button btn = GameObject.Find("Jump Potion Button").GetComponent<Button>();
-		potionSpeed.onClick.AddListener(SpeedPotion);
-		potionJump.onClick.AddListener(JumpPotion);
-	}
-
-
-	void SpeedPotion()
+    public void RecipePotion()
     {
-		if (im.countPCrystal > 0 && im.countBCrystal > 0)
-		{
-			potionResult.sprite = iconSpeed;
-		}
-		else
-		{
-			Debug.Log("RecipeNO");
-		}
-    }
-
-	void JumpPotion()
-	{
-		if (im.countCarrot > 0 && im.countBCrystal > 0)
-		{
-			potionResult.sprite = iconJump;
-		}
-		else
-		{
-			Debug.Log("RecipeNO");
-		}
+        //potionResult.sprite = notAvailable;
+        GameObject craftButton = GameObject.Find("Craft");
+        CraftingRecipe CR = craftButton.GetComponent<CraftingRecipe>();
+        
+		if(potion.ingr1.count > 0 && potion.ingr2.count > 0)
+        {
+            potionResult.sprite = potion.icon;
+            CR.finalPotion = potion;
+        }
+        
+        
 	}
+
+    public void CraftPotion()
+    {
+        InvenManager.Instance.Remove(finalPotion.ingr1);
+        InvenManager.Instance.Remove(finalPotion.ingr2);
+        Debug.Log("Crafted " + finalPotion.kind);
+        Debug.Log("Left: " + finalPotion.ingr1.count + " and " + finalPotion.ingr2.count);
+    }
 
 }
