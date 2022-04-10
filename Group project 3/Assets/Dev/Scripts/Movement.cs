@@ -65,10 +65,11 @@ public class Movement : MonoBehaviour
         {
             Doublejump = 0;
             gravity = -19.62f;
+            
         } else {
             gravity = gravity + (gravity * 0.003f);
         }
-        if (isGrounded && velocity.y < 0)
+        if (isGrounded && velocity.y < 1)
         {
             velocity.y = -2f;
             moving.SetBool("IsJumping", false);

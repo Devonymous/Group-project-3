@@ -13,6 +13,8 @@ TagManager:
   - Point1
   - Point2
   - Potion
+  - Puzzle
+  - Button
   layers:
   - Default
   - TransparentFX
