@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
 {
     public CharacterController controller;
     public Transform cam;
-    private ParticleSystem Particles;
+    public TrailRenderer Particles,Particles1;
 
     public float speed = 10,gravity = -19.62f,jumpHeight = 3, Sprint,Walk, P_rate;
     Vector3 velocity;
@@ -33,7 +33,6 @@ public class Movement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Sprint = speed * 2;
         Walk = speed;
-        Particles = GetComponent<ParticleSystem>();
         spawn = GameObject.FindGameObjectWithTag("Spawn");
         craftmenu = GetComponent<CraftMenu>();
     }
@@ -105,7 +104,6 @@ public class Movement : MonoBehaviour
     }
     void Move()
     {
-        var em = Particles.emission;
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
@@ -122,7 +120,8 @@ public class Movement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftShift)) // sprint
             {
             speed = Sprint;
-            em.enabled = true;
+            Particles.emitting = true;
+            Particles1.emitting = true;
             isRunning = true;
             }
             moving.speed = 1f;
@@ -132,7 +131,8 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             speed = Walk;
-            em.enabled = false;
+            Particles.emitting = false;
+            Particles1.emitting = false;
             isRunning = false;
         }
         if (moving.GetCurrentAnimatorStateInfo(0).IsTag("1") == true && isRunning == true)
