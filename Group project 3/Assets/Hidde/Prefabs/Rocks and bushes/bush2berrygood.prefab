@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1538020156845148568}
   - component: {fileID: 3656028337210768722}
   - component: {fileID: 6742304293990596435}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bush2berrygood
   m_TagString: Untagged
   m_Icon: {fileID: 0}

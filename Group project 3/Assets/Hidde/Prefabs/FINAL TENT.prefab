@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1335028664520054484}
   - component: {fileID: 8466981718405170978}
   - component: {fileID: 9037466875272029756}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BezierCurve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3654411043809820391}
-  m_Layer: 0
+  - component: {fileID: 973234297044579742}
+  m_Layer: 6
   m_Name: FINAL TENT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,6 +114,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &973234297044579742
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4178429882935288925}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4835432049097406527
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +139,8 @@ GameObject:
   - component: {fileID: 7547579370519219165}
   - component: {fileID: 881060994736736541}
   - component: {fileID: 6276972551541617078}
-  m_Layer: 0
+  - component: {fileID: 5093166260557179101}
+  m_Layer: 6
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,3 +210,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5093166260557179101
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4835432049097406527}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7387706064836869012, guid: f09c9326f60006c409c1c824d586d772, type: 3}
