@@ -158,25 +158,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 58b4b6dd8f60bc0429bfdd31486f1cc5, type: 3}
   m_PrefabInstance: {fileID: 4318955387942187917}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &41044098 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 281855664364225751, guid: 30fd6df275aa8854f886fdbe52f54fca, type: 3}
-  m_PrefabInstance: {fileID: 1257327814}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &41044100
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41044098}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8552134717624371188, guid: 30fd6df275aa8854f886fdbe52f54fca, type: 3}
 --- !u!4 &43259330 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2479913119814301538, guid: a90608ec1f3380d4cabf917a2d364046, type: 3}
@@ -215,6 +196,8 @@ MonoBehaviour:
     sentences:
     - If you want to run, hold shift!
     - Milady
+    sentences2: []
+  test: 0
 --- !u!95 &63938295
 Animator:
   serializedVersion: 3
@@ -317,6 +300,8 @@ MonoBehaviour:
     - 'You can pick up gems and herbs from the ground to craft ability potions! '
     - Open your inventory with "I" and your crafting window with "C"!
     - "Tsch\xFCss"
+    sentences2: []
+  test: 0
 --- !u!4 &70373956 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f3aa3f87c61a5b841a61e21ea48374e6, type: 3}
@@ -375,7 +360,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6f33b28a18b214428f08d7dcc728a3a, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6f33b28a18b214428f08d7dcc728a3a, type: 3}
       propertyPath: m_LocalScale.x
@@ -848,6 +833,8 @@ MonoBehaviour:
     sentences:
     - 'If you want to jump, press space, if you want to jump highr, press space twice! '
     - Yellow kinda sus
+    sentences2: []
+  test: 0
 --- !u!95 &333649152
 Animator:
   serializedVersion: 3
@@ -1345,25 +1332,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4126291534084283317, guid: d2b835fa3dce6ba40bb6f3f9e5bc693f, type: 3}
   m_PrefabInstance: {fileID: 4318955386678494477}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &531681598 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -2045257923548263128, guid: 30fd6df275aa8854f886fdbe52f54fca, type: 3}
-  m_PrefabInstance: {fileID: 1257327814}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &531681600
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 531681598}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2477511411847689622, guid: 30fd6df275aa8854f886fdbe52f54fca, type: 3}
 --- !u!4 &532490973 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2275942972291756619, guid: 3c090cc86d0793145a680e4278315c35, type: 3}
@@ -1551,6 +1519,8 @@ MonoBehaviour:
     sentences:
     - Hey I heard you can win a trophy if you solve the puzzle back in the woods
     - Bye
+    sentences2: []
+  test: 0
 --- !u!95 &683864079
 Animator:
   serializedVersion: 3
@@ -2414,63 +2384,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6038346457727809545, guid: 56f05ebe07e7b22418f364a503e3563d, type: 3}
   m_PrefabInstance: {fileID: 4318955388396285197}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1257327814
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 30fd6df275aa8854f886fdbe52f54fca, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 30fd6df275aa8854f886fdbe52f54fca, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1071.8
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 30fd6df275aa8854f886fdbe52f54fca, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -421.3
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 30fd6df275aa8854f886fdbe52f54fca, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -217.8
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 30fd6df275aa8854f886fdbe52f54fca, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.119005404
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 30fd6df275aa8854f886fdbe52f54fca, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.028842874
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 30fd6df275aa8854f886fdbe52f54fca, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.99153167
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 30fd6df275aa8854f886fdbe52f54fca, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.04325231
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 30fd6df275aa8854f886fdbe52f54fca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -5.315
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 30fd6df275aa8854f886fdbe52f54fca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -166.437
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 30fd6df275aa8854f886fdbe52f54fca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 2.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 30fd6df275aa8854f886fdbe52f54fca, type: 3}
-      propertyPath: m_Name
-      value: cave
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 30fd6df275aa8854f886fdbe52f54fca, type: 3}
 --- !u!4 &1267631339 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2275942972291756619, guid: 3c090cc86d0793145a680e4278315c35, type: 3}
@@ -2987,7 +2900,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 41.2, y: -151.2, z: 112.9}
 --- !u!1001 &1481529192
 PrefabInstance:
@@ -3264,7 +3177,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1540616263 stripped
 Transform:
@@ -3771,7 +3684,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1885015768 stripped
 Transform:
@@ -4270,7 +4183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 14976130325910822, guid: 42673d0793feac343a6903c460362e92, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 14976130325910822, guid: 42673d0793feac343a6903c460362e92, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4491,7 +4404,7 @@ RectTransform:
   - {fileID: 683864082}
   - {fileID: 70373956}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -18807,7 +18720,7 @@ PrefabInstance:
       objectReference: {fileID: 1672850523}
     - target: {fileID: 5277625551431203139, guid: e3eca393b3e826f45bc49b2e7992ac4d, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5277625551431203139, guid: e3eca393b3e826f45bc49b2e7992ac4d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18899,11 +18812,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5277625551696052287, guid: e3eca393b3e826f45bc49b2e7992ac4d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000016839
+      value: -0.00000001683418
       objectReference: {fileID: 0}
     - target: {fileID: 5277625551696052287, guid: e3eca393b3e826f45bc49b2e7992ac4d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000003560955
+      value: 0.0000000035619698
       objectReference: {fileID: 0}
     - target: {fileID: 5277625551973408264, guid: e3eca393b3e826f45bc49b2e7992ac4d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18947,7 +18860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5277625552717996483, guid: e3eca393b3e826f45bc49b2e7992ac4d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.18426846
+      value: 0.18426844
       objectReference: {fileID: 0}
     - target: {fileID: 5277625552717996483, guid: e3eca393b3e826f45bc49b2e7992ac4d, type: 3}
       propertyPath: m_LocalRotation.y
@@ -19304,7 +19217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6646244458657679925, guid: 92654cf7676ce8a478c0ea8cf6ea8430, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6646244458657679925, guid: 92654cf7676ce8a478c0ea8cf6ea8430, type: 3}
       propertyPath: m_AnchorMax.x
