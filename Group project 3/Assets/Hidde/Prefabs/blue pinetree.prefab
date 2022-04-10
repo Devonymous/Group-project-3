@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8535905224105031075}
   - component: {fileID: 4745240424046754310}
   - component: {fileID: 7367480314898255564}
+  - component: {fileID: 1135438845624818939}
   m_Layer: 0
   m_Name: blue pinetree
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 9024774123034652441}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 1036.8, y: -396.22, z: -984.78}
-  m_LocalScale: {x: 195.57716, y: 195.57716, z: 195.57716}
+  m_LocalScale: {x: 159.19981, y: 159.19981, z: 159.19981}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -86,3 +87,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1135438845624818939
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9024774123034652441}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: 13286b88bb799b047af1feea1d89f6d6, type: 3}

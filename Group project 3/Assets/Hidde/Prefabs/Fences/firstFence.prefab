@@ -2786,6 +2786,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7971681330109141743}
+  - component: {fileID: 402984159751301555}
   m_Layer: 0
   m_Name: firstFence
   m_TagString: Untagged
@@ -2802,7 +2803,7 @@ Transform:
   m_GameObject: {fileID: 7343903434354231381}
   m_LocalRotation: {x: 0.011769758, y: -0.2837709, z: -0.0397341, w: 0.95799625}
   m_LocalPosition: {x: 978.29, y: -393.91, z: -975.4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.783, y: 0.783, z: 0.783}
   m_Children:
   - {fileID: 3906378190966568820}
   - {fileID: 4467695680589467821}
@@ -2849,6 +2850,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -33, z: -4.75}
+--- !u!64 &402984159751301555
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7343903434354231381}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &8080611074764359284
 GameObject:
   m_ObjectHideFlags: 0
