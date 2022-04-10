@@ -6,6 +6,7 @@ public class NPC : MonoBehaviour
 {
     public GameObject Player;
     public Dialogue dialogue;
+    public bool test;
     public void TriggerDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
@@ -16,6 +17,10 @@ public class NPC : MonoBehaviour
     }
     private void Update()
     {
+        if (test == true)
+        {
+            dialogue.sentences = dialogue.sentences2;
+        }
         if ((Player.transform.position-this.transform.position).sqrMagnitude<2.6*2.6) 
         {
             var lookPos = Player.transform.position - transform.position;
