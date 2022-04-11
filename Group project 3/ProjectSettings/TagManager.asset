@@ -16,6 +16,7 @@ TagManager:
   - Puzzle
   - Button
   - S_point
+  - UI
   layers:
   - Default
   - TransparentFX
@@ -61,4 +62,7 @@ TagManager:
     locked: 0
   - name: UISlots
     uniqueID: 2154498401
+    locked: 0
+  - name: UIBG
+    uniqueID: 1641576297
     locked: 0
