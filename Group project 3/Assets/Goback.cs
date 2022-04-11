@@ -5,13 +5,21 @@ using UnityEngine;
 public class Goback : MonoBehaviour
 {
     public Transform spawn,player;
-    void Start()
-    {
-    }
+    public bool goback;
 
-    // Update is called once per frame
-    void OnTriggerStay(Collider other)
+    void Update()
     {
-        player.position = spawn.position;
+        if (goback)
+        {
+            player.position = spawn.position;
+        }
+    }
+    void OnTriggerEnter(Collider other)
+    {
+            goback = true;
+    }
+    void OnTriggerExit(Collider other)
+    {
+            goback = false;
     }
 }
