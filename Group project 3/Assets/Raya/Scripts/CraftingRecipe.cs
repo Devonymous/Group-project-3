@@ -32,8 +32,10 @@ public class CraftingRecipe : MonoBehaviour
     {
         InvenManager.Instance.Remove(finalPotion.ingr1);
         InvenManager.Instance.Remove(finalPotion.ingr2);
+        
         Debug.Log("Crafted " + finalPotion.kind);
         Debug.Log("Left: " + finalPotion.ingr1.count + " and " + finalPotion.ingr2.count);
+        PotionInventory.Instance.Add(finalPotion);
     }
 
 }
