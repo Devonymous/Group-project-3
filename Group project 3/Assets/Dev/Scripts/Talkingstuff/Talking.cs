@@ -7,7 +7,7 @@ public class Talking : MonoBehaviour
     private GameObject NPC_Trigger;
     private bool Trigger;
     public GameObject NPC_text;
-    public Animator animator;
+    public Animator animator,Char;
     public GameObject Cam;
     Text Show_text;
     
@@ -25,6 +25,7 @@ public class Talking : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 var test = NPC_Trigger.GetComponent<NPC>();
                 test.TriggerDialogue();
+                Char.SetBool("IsWalking", false);
             }
         } 
     }

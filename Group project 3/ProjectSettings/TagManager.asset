@@ -15,6 +15,7 @@ TagManager:
   - Potion
   - Puzzle
   - Button
+  - S_point
   layers:
   - Default
   - TransparentFX

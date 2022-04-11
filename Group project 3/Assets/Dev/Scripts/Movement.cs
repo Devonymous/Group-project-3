@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     public Transform cam;
     public TrailRenderer Particles,Particles1;
 
-    public float speed = 10,gravity = -19.62f,jumpHeight = 3, Sprint,Walk, P_rate;
+    public float speed = 13,gravity = -19.62f,jumpHeight = 3, Sprint,Walk, P_rate;
     Vector3 velocity;
     bool isGrounded,isRunning;
     

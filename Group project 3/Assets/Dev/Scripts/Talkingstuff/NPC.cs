@@ -6,7 +6,7 @@ public class NPC : MonoBehaviour
 {
     public GameObject Player;
     public Dialogue dialogue;
-    public bool test;
+    public bool test2,test3,test4;
     public void TriggerDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
@@ -17,9 +17,17 @@ public class NPC : MonoBehaviour
     }
     private void Update()
     {
-        if (test == true)
+        if (test2 == true)
         {
             dialogue.sentences = dialogue.sentences2;
+        }
+        if (test3 == true)
+        {
+            dialogue.sentences = dialogue.sentences3;
+        }
+        if (test4 == true)
+        {
+            dialogue.sentences = dialogue.sentences4;
         }
         if ((Player.transform.position-this.transform.position).sqrMagnitude<2.6*2.6) 
         {

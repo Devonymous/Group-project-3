@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     public Text nametext;
     public Text dialoguetext;
     private Queue<string> sentences;
+    public GameObject UI1;
     public GameObject Cam;
     void Start()
     {
@@ -17,6 +18,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        UI1.SetActive(false);
         Cam.SetActive(false);
         animator.SetBool("IsOpen", true);
         nametext.text = dialogue.name;
@@ -53,6 +55,7 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
+        UI1.SetActive(true);
         Cam.SetActive(true);
         animator.SetBool("IsOpen", false);
         Cursor.visible = false;
