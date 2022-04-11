@@ -15,5 +15,5 @@ MonoBehaviour:
   id: 8
   itemName: Poppy
   value: 0
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: f0db218c16a213548bbb60d1328d2ce1, type: 3}
   count: 0

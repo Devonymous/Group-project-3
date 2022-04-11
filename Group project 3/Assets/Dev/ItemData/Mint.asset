@@ -15,4 +15,5 @@ MonoBehaviour:
   id: 5
   itemName: Mint
   value: 0
-  icon: {fileID: 21300000, guid: f4c34832694d1444e99c7533b4875d87, type: 3}
+  icon: {fileID: 21300000, guid: 9003d4cfa40b94e4b9876b1e1f453685, type: 3}
+  count: 0
