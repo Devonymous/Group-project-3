@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
@@ -10,6 +11,8 @@ public class PauseMenu : MonoBehaviour
 
         public GameObject pauseMenu;
         public GameObject pauseBG;
+
+        public  AudioMixer audioMixer;
 
 
     void Start()
@@ -47,5 +50,13 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 1f;
             isPaused = false;
         }
+
+
+
+    public void SetVolume (float volume)
+
+    {
+        audioMixer.SetFloat("volume", volume);
+    }
 
 }

@@ -39464,6 +39464,7 @@ MonoBehaviour:
   isPaused: 0
   pauseMenu: {fileID: 113107913}
   pauseBG: {fileID: 252654217}
+  audioMixer: {fileID: 24100000, guid: 967dd2d4f038afc45b22d488fbd98384, type: 2}
 --- !u!1001 &996881365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85531,15 +85532,15 @@ PrefabInstance:
       objectReference: {fileID: 1714689753}
     - target: {fileID: 3135145879941309986, guid: b7c0465a76f630d4ba491e7d8c47ebd2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.17228411
+      value: 0.17228413
       objectReference: {fileID: 0}
     - target: {fileID: 3135145880199788565, guid: b7c0465a76f630d4ba491e7d8c47ebd2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.117485926
+      value: -0.117485955
       objectReference: {fileID: 0}
     - target: {fileID: 3135145880199788565, guid: b7c0465a76f630d4ba491e7d8c47ebd2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.17228411
+      value: 0.17228414
       objectReference: {fileID: 0}
     - target: {fileID: 3135145880544227334, guid: b7c0465a76f630d4ba491e7d8c47ebd2, type: 3}
       propertyPath: m_LocalRotation.y
