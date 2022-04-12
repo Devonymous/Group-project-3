@@ -6,7 +6,10 @@ public class Goback : MonoBehaviour
 {
     public Transform spawn,player;
     public bool goback;
-
+    void Start()
+    {
+        player.position = spawn.position;
+    }
     void Update()
     {
         if (goback)
