@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     public CharacterController controller;
     public Transform cam;
     public TrailRenderer Particles,Particles1;
+    public PauseMenu PauseMenu;
 
     public float speed = 13,gravity = -19.62f,jumpHeight = 3, Sprint,Walk, P_rate;
     Vector3 velocity;
@@ -38,7 +39,7 @@ public class Movement : MonoBehaviour
     }
     void Update()
     {
-        if (animator.GetBool("IsOpen") == true || craftmenu.Open_inv == true)
+        if (animator.GetBool("IsOpen") == true || craftmenu.Open_inv == true || PauseMenu.isPaused == true)
         {
 
         } else {

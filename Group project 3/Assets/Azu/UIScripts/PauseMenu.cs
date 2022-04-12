@@ -12,7 +12,8 @@ public class PauseMenu : MonoBehaviour
         public GameObject pauseMenu;
         public GameObject pauseBG;
 
-        public  AudioMixer audioMixer;
+        public  AudioSource audioMixer;
+        public GameObject Camera;
 
 
     void Start()
@@ -40,23 +41,33 @@ public class PauseMenu : MonoBehaviour
         {
             pauseMenu.SetActive(true);
             pauseBG.SetActive(true);
-            Time.timeScale = 0f;
+
             isPaused = true;
+
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
+            Camera.SetActive(false);
         }
     public void ResumeGame()
         {
             pauseMenu.SetActive(false);
             pauseBG.SetActive(false);
-            Time.timeScale = 1f;
+    
             isPaused = false;
+
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+
+            Camera.SetActive(true);
         }
 
 
 
-    public void SetVolume (float volume)
+    public void SetVolume (float volume1)
 
     {
-        audioMixer.SetFloat("volume", volume);
+        audioMixer.volume=volume1;
     }
 
 }
