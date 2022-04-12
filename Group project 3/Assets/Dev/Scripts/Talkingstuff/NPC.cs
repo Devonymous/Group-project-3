@@ -5,11 +5,18 @@ using UnityEngine;
 public class NPC : MonoBehaviour
 {
     public GameObject Player;
+    public bool QuestGiver;
     public Dialogue dialogue;
+    public GiveQuest questscript;
     public bool test2,test3,test4;
     public void TriggerDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        if (QuestGiver)
+        {
+            questscript = gameObject.GetComponent<GiveQuest>();
+            questscript.StartQuest();
+        }
     }
     private void Start()
     {

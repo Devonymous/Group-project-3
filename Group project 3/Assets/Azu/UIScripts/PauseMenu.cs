@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using Cinemachine;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
@@ -14,10 +16,14 @@ public class PauseMenu : MonoBehaviour
 
         public  AudioSource audioMixer;
         public GameObject Camera;
+        public CinemachineFreeLook SensCam;
+        public Slider Volume,sens;
 
 
     void Start()
         {
+            Volume.value = audioMixer.volume;
+            sens.value = SensCam.m_YAxis.m_MaxSpeed * 250;
             pauseMenu.SetActive(false);
             pauseBG.SetActive(false);
         }
@@ -63,7 +69,11 @@ public class PauseMenu : MonoBehaviour
         }
 
 
-
+    public void SetSens (float sens) 
+    {
+        SensCam.m_XAxis.m_MaxSpeed = sens / 3.5f;
+        SensCam.m_YAxis.m_MaxSpeed = sens / 250;
+    }
     public void SetVolume (float volume1)
 
     {

@@ -9,6 +9,7 @@ public class Talking : MonoBehaviour
     public GameObject NPC_text;
     public Animator animator,Char;
     public GameObject Cam;
+    public DialogueManager script;
     Text Show_text;
     
     void Update()
@@ -24,7 +25,13 @@ public class Talking : MonoBehaviour
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
                 var test = NPC_Trigger.GetComponent<NPC>();
-                test.TriggerDialogue();
+                if (script.Istalking == false)
+                {
+                    test.TriggerDialogue();
+                } else {
+                    script.DisplayNextSentence();
+                }
+                
                 Char.SetBool("IsWalking", false);
             }
         } 

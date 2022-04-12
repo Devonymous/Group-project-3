@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     public GameObject UI1;
     public GameObject Cam;
+    public bool Istalking = false;
     void Start()
     {
         sentences = new Queue<string>();
@@ -18,6 +19,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        Istalking = true;
         UI1.SetActive(false);
         Cam.SetActive(false);
         animator.SetBool("IsOpen", true);
@@ -55,6 +57,7 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
+        Istalking = false;
         UI1.SetActive(true);
         Cam.SetActive(true);
         animator.SetBool("IsOpen", false);
