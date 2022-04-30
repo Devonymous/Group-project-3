@@ -28,6 +28,9 @@ public class Movement : MonoBehaviour
     GameObject spawn;
     public Animator animator, moving;
     public CraftMenu craftmenu;
+
+    public bool wallEnabled = false;
+
     void Start()
     {
         Cursor.visible = false;
@@ -51,9 +54,9 @@ public class Movement : MonoBehaviour
         
         Wall();
     }
-    void Wall()
+    public void Wall()
     {
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.M) && wallEnabled == true)
         {
             Instantiate(Cube, spawn.transform.position, transform.rotation);
         }

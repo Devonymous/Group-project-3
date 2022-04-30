@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4763727f8b06b124fbcdccd12c631318, type: 3}
-  m_Name: Jump
+  m_Name: Cube
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 4a276413e0ac21a45834f7e4e815aab9, type: 3}
-  ingr1: {fileID: 11400000, guid: abf5da0e7a6408945b326f269f7ec274, type: 2}
+  icon: {fileID: 21300000, guid: daa05e99c62dbf642aa17d54d97c920b, type: 3}
+  ingr1: {fileID: 11400000, guid: b3a3d118bfb229d4b8d0e70f7985c6e9, type: 2}
   ingr2: {fileID: 11400000, guid: 10b2c7ca46b9d544cb8ef44b985892ad, type: 2}
-  kind: Jump
+  kind: Cube
+  id: 2

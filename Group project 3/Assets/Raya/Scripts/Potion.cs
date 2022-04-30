@@ -1,3 +1,5 @@
+// Scriptable Object Potion
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,5 +10,5 @@ public class Potion : ScriptableObject
     public Sprite icon;
     public Item ingr1, ingr2;
     public string kind;
-
+    public int id;
 }

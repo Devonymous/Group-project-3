@@ -1,3 +1,5 @@
+// Opening or closing of the Crafting Menu 
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,25 +13,25 @@ public class CraftMenu : MonoBehaviour
 
     private void Update()
     {
+        // Key C opens Crafting Menu
         if (Input.GetKeyDown(KeyCode.C)) {
             OpenCraftMenu();
         }
-        
     }
 
+    // Pauses the camera movement when the Craft Menu is open
     public void OpenCraftMenu()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            Open_inv = !Open_inv;     
-        }
+        Open_inv = !Open_inv;
+
         if (Open_inv == true)
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             Cam.SetActive(false);
             craftingMenu.SetActive(true);
-        } else if (Open_inv == false)
+        } 
+        else if (Open_inv == false) 
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
