@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Pickup : MonoBehaviour
 {
     public bool Pickup_able = false;
+    public bool Item_pickup = false;
     public GameObject Herb;
     public GameObject UI_e;
     public ItemController ItemData;
@@ -29,6 +30,13 @@ public class Pickup : MonoBehaviour
                 UI_e.SetActive(false);
                 Pickup_able = false;
             }
+            if (Item_pickup == true) 
+            {
+                Destroy(Herb);
+                Herb = null;
+                UI_e.SetActive(false);
+                Item_pickup = false;
+            }
         }
     }
 
@@ -42,6 +50,14 @@ public class Pickup : MonoBehaviour
             Show_text.text = "Pickup";
             Herb = Other.gameObject; 
         }
+        if (Other.gameObject.tag == "Item")
+        {
+            Item_pickup = true;
+            UI_e.SetActive(true);
+            Show_text = UI_e.GetComponent<Text>();
+            Show_text.text = "Pickup";
+            Herb = Other.gameObject; 
+        }
     }
     void OnTriggerExit(Collider Other)
     {
@@ -49,6 +65,11 @@ public class Pickup : MonoBehaviour
         {
             UI_e.SetActive(false);
             Pickup_able = false;
+        }
+        if (Other.gameObject.tag == "Item")
+        {
+            UI_e.SetActive(false);
+            Item_pickup = false;
         }
     }
 

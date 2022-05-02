@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class Pressure_plate : MonoBehaviour
 {
-    MeshRenderer boop;
+    public MeshRenderer boop;
+    public GameObject wall;
     public Material mat;
     public Material matback;
     public int Test = 0;
-    void Start()
-    {
-        boop = GetComponent<MeshRenderer>();
-    }
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.M))
         {
             boop.material = matback;
+        }
+        if (!wall)
+        {
+            boop.material = mat;
         }
     }
     void OnTriggerEnter(Collider other)

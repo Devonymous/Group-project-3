@@ -17,6 +17,8 @@ TagManager:
   - Button
   - S_point
   - UI
+  - Breakable
+  - Item
   layers:
   - Default
   - TransparentFX
