@@ -6940,6 +6940,7 @@ MonoBehaviour:
   moving: {fileID: 515867573}
   craftmenu: {fileID: 161715214}
   wallEnabled: 0
+  sprintEnabled: 0
 --- !u!143 &161715210
 CharacterController:
   m_ObjectHideFlags: 0
@@ -7017,6 +7018,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Pickup_able: 0
+  Item_pickup: 0
   Herb: {fileID: 0}
   UI_e: {fileID: 251603931}
   ItemData: {fileID: 0}
@@ -21973,6 +21975,12 @@ MonoBehaviour:
   - {fileID: 1431038213}
   - {fileID: 565771220}
   - {fileID: 249605840}
+  timers:
+  - 4
+  - 4
+  - 4
+  - 10
+  - 10
   Potions: []
 --- !u!1 &391969195
 GameObject:
@@ -34728,7 +34736,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701576002}
-  m_LocalRotation: {x: -0.12237488, y: -0.65742284, z: 0.1745162, w: -0.7227474}
+  m_LocalRotation: {x: -0.12237486, y: -0.6574229, z: 0.17451619, w: -0.7227474}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -45059,7 +45067,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.12237488, y: -0.65742284, z: 0.1745162, w: -0.7227474}
+  m_LocalRotation: {x: -0.12237486, y: -0.6574229, z: 0.17451619, w: -0.7227474}
   m_LocalPosition: {x: -3.1053214, y: 1.5686947, z: -0.37785387}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

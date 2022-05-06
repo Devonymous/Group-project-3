@@ -9,7 +9,10 @@ public class PotionsList : MonoBehaviour
     int i;
     int selectedPotion;
     Potion activatedPotion;
+    public float[] timers;
 
+    float stoptime;
+    GameObject player;
     Movement movementScript;
 
     public List<Potion> Potions = new List<Potion>();
@@ -24,7 +27,7 @@ public class PotionsList : MonoBehaviour
     
     public void Start()
     {
-        GameObject player = GameObject.Find("Player");
+        player = GameObject.Find("Player");
         movementScript = player.GetComponent<Movement>(); // Access to the movement script
     }
 
@@ -42,9 +45,24 @@ public class PotionsList : MonoBehaviour
                 if (activatedPotion.id == 2)    // Enables the ability 
                 {
                     movementScript.wallEnabled = true;
+                    movementScript.DelayStopWall();
+                    //StartCoroutine(AbilityTimer(movementScript.wallEnabled));
+                }
+                if (activatedPotion.id == 0 && movementScript.sprintEnabled == false)     // Enables the ability 
+                {
+                    movementScript.sprintEnabled = true;
+                    movementScript.Sprinting();
+                    //stoptime = Time.time + 10f;
+                    movementScript.DelayStopSprint();
+                    //StartCoroutine(AbilityTimer(movementScript.sprintEnabled));
                 }
             }
         }
+
+        //if (stoptime == Time.time)
+        //{
+        //    movementScript.StopSprint();
+        //}
     }
 
     // Finds a potion by ID and removes it from the list of potions
@@ -59,6 +77,13 @@ public class PotionsList : MonoBehaviour
                 Debug.Log("Potion Removed");
             }
         }
+    }
+
+    IEnumerator AbilityTimer(bool ability)
+    {
+        ability = false;
+        yield return new WaitForSeconds(20f);
+        Debug.Log("Ability stopped");
     }
 
     // UI FUNCTIONS ----------------------------------------------------------------
@@ -102,23 +127,27 @@ public class PotionsList : MonoBehaviour
     // Removes icons of potions that are missing
     void NoMorePotionCheck()
     {
-        foreach (Potion potion in Potions)
-        {
-            int count = 0;
+        int count = 0;
 
-            for (int i = 0; i < Potions.Count; i++)
+        for (int i = 0; i < 5; i++)  // goes through every id
+        {
+            foreach (Potion potion in Potions) // goes through every potion
             {
-                if (Potions[i] == potion)
+                if (potion.id == i)
                 {
                     count++;
                 }
             }
 
-            if (count < 1)
+            //if there are no potions in the list with this id the slot gets empty
+            if (count < 1) 
             {
-                slots[potion.id].enabled = false;
+                slots[i].gameObject.SetActive(false); 
             }
+
+            count = 0;
         }
+
     }
 
 }

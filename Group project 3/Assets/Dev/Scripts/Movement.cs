@@ -8,13 +8,13 @@ public class Movement : MonoBehaviour
 {
     public CharacterController controller;
     public Transform cam;
-    public TrailRenderer Particles,Particles1;
+    public TrailRenderer Particles, Particles1;
     public PauseMenu PauseMenu;
 
-    public float speed = 13,gravity = -19.62f,jumpHeight = 3, Sprint,Walk, P_rate;
+    public float speed = 13, gravity = -19.62f, jumpHeight = 3, Sprint, Walk, P_rate;
     Vector3 velocity;
-    bool isGrounded,isRunning;
-    
+    bool isGrounded, isRunning;
+
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -30,6 +30,7 @@ public class Movement : MonoBehaviour
     public CraftMenu craftmenu;
 
     public bool wallEnabled = false;
+    public bool sprintEnabled = false;
 
     void Start()
     {
@@ -45,22 +46,18 @@ public class Movement : MonoBehaviour
         if (animator.GetBool("IsOpen") == true || craftmenu.Open_inv == true || PauseMenu.isPaused == true)
         {
 
-        } else {
+        }
+        else
+        {
             Move();
             Jump();
         }
-        
+
         Gravity();
-        
+
         Wall();
     }
-    public void Wall()
-    {
-        if (Input.GetKeyDown(KeyCode.M) && wallEnabled == true)
-        {
-            Instantiate(Cube, spawn.transform.position, transform.rotation);
-        }
-    }
+
     void Jump()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -68,8 +65,10 @@ public class Movement : MonoBehaviour
         {
             Doublejump = 0;
             gravity = -19.62f;
-            
-        } else {
+
+        }
+        else
+        {
             gravity = gravity + (gravity * 0.003f);
         }
         if (isGrounded && velocity.y < 1)
@@ -80,8 +79,8 @@ public class Movement : MonoBehaviour
         }
         if (Input.GetButtonDown("Jump"))
         {
-            if(Doublejump == 0) // 1st jump
-            { 
+            if (Doublejump == 0) // 1st jump
+            {
                 moving.SetBool("IsJumping", true);
                 velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
                 Doublejump++;
@@ -96,7 +95,8 @@ public class Movement : MonoBehaviour
         if (Doublejump == 2)
         {
             Jump_particles.SetActive(true);
-        } else
+        }
+        else
         {
             Jump_particles.SetActive(false);
         }
@@ -111,25 +111,20 @@ public class Movement : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
-        if(direction.magnitude >= 0.1f)
+        if (direction.magnitude >= 0.1f)
         {
-            
+
             moving.SetBool("IsWalking", true);
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
-
-            if (Input.GetKeyDown(KeyCode.LeftShift)) // sprint
-            {
-            speed = Sprint;
-            Particles.emitting = true;
-            Particles1.emitting = true;
-            isRunning = true;
-            }
+            Sprinting();
             moving.speed = 1f;
-        } else {
+        }
+        else
+        {
             moving.SetBool("IsWalking", false);
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
@@ -142,9 +137,59 @@ public class Movement : MonoBehaviour
         if (moving.GetCurrentAnimatorStateInfo(0).IsTag("1") == true && isRunning == true)
         {
             moving.speed = 1.6f;
-        } else {
+        }
+        else
+        {
             moving.speed = 1f;
         }
     }
 
+
+    //ABILITIES -----------------------------------------------------------------------------------
+
+    //Sprinting
+    public void Sprinting() 
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift) && sprintEnabled == true) // sprint
+        {
+            speed = Sprint;
+            Particles.emitting = true;
+            Particles1.emitting = true;
+            isRunning = true;
+        }
+    }
+
+    public void StopSprint()
+    {
+        sprintEnabled = false;
+        speed = 13;
+        Particles.emitting = false;
+        Particles1.emitting = false;
+        isRunning = false;
+    }
+
+    public void DelayStopSprint()
+    {
+        Invoke("StopSprint", 20f);
+    }
+
+
+    // Creating Walls
+    public void Wall()
+    {
+        if (Input.GetKeyDown(KeyCode.M) && wallEnabled == true)
+        {
+            Instantiate(Cube, spawn.transform.position, transform.rotation);
+        }
+    }
+
+    public void StopWall()
+    {
+        wallEnabled = false;
+    }
+
+    public void DelayStopWall()
+    {
+        Invoke("StopWall", 20f);
+    }
 }
