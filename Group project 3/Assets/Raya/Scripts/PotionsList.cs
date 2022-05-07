@@ -36,33 +36,40 @@ public class PotionsList : MonoBehaviour
     {
         SelectPotion();    // Which potion is selected in the HUD
         NoMorePotionCheck();    // Are any potions missing
-
+      
         if (Input.GetKey(KeyCode.Tab))    // Potion gets activated by TAB
         {
             if(slots[selectedPotion].enabled == true)    // Checks if the selected slot has potion in it
             {
                 FindPotionByID(selectedPotion);    // Finds a potion by ID and removes it from the list
+                if (activatedPotion.id == 3)     // Enables the ability 
+                {
+                    movementScript.energyBallEnabled = true;
+                    movementScript.ShootEnergyBall();
+                    movementScript.DelayStopBall();
+                    //StartCoroutine(AbilityTimer(movementScript.sprintEnabled));
+                }
                 if (activatedPotion.id == 2)    // Enables the ability 
                 {
                     movementScript.wallEnabled = true;
                     movementScript.DelayStopWall();
                     //StartCoroutine(AbilityTimer(movementScript.wallEnabled));
                 }
+                if (activatedPotion.id == 1)    // Enables the ability 
+                {
+                    movementScript.doubleJumpEnabled = true;
+                    movementScript.DelayStopDoubleJump();
+                    //StartCoroutine(AbilityTimer(movementScript.wallEnabled));
+                }
                 if (activatedPotion.id == 0 && movementScript.sprintEnabled == false)     // Enables the ability 
                 {
                     movementScript.sprintEnabled = true;
                     movementScript.Sprinting();
-                    //stoptime = Time.time + 10f;
                     movementScript.DelayStopSprint();
                     //StartCoroutine(AbilityTimer(movementScript.sprintEnabled));
                 }
             }
         }
-
-        //if (stoptime == Time.time)
-        //{
-        //    movementScript.StopSprint();
-        //}
     }
 
     // Finds a potion by ID and removes it from the list of potions

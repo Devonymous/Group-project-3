@@ -20,6 +20,7 @@ public class Movement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     public GameObject Cube;
+    public GameObject EnergyBall;
 
     float turnSmoothVelocity;
     public float turnSmoothTime = 0.1f;
@@ -31,6 +32,10 @@ public class Movement : MonoBehaviour
 
     public bool wallEnabled = false;
     public bool sprintEnabled = false;
+    public bool doubleJumpEnabled = false;
+    public bool energyBallEnabled = false;
+
+    public float shootForce = 1000f;
 
     void Start()
     {
@@ -85,7 +90,7 @@ public class Movement : MonoBehaviour
                 velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
                 Doublejump++;
             }
-            if (!isGrounded && Doublejump == 1) // 2nd jump
+            if (!isGrounded && Doublejump == 1 && doubleJumpEnabled) // 2nd jump
             {
                 moving.SetBool("IsDouble", true);
                 velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
@@ -173,6 +178,16 @@ public class Movement : MonoBehaviour
         Invoke("StopSprint", 20f);
     }
 
+    // Double Jump
+    void StopDoubleJump()
+    {
+        doubleJumpEnabled = false;
+    }
+
+    public void DelayStopDoubleJump()
+    {
+        Invoke("StopDoubleJump", 20f);
+    }
 
     // Creating Walls
     public void Wall()
@@ -191,5 +206,26 @@ public class Movement : MonoBehaviour
     public void DelayStopWall()
     {
         Invoke("StopWall", 20f);
+    }
+
+    //Energy Ball
+    public void ShootEnergyBall()
+    {
+        if (Input.GetKeyDown(KeyCode.N) && energyBallEnabled == true)
+        {
+            GameObject ball = GameObject.Instantiate(EnergyBall, spawn.transform.position, transform.rotation);
+            ball.GetComponent<Rigidbody>().AddForce(transform.forward * shootForce);
+            Destroy(ball, 3f);
+        }
+    }
+
+    void StopEnergyBall()
+    {
+        energyBallEnabled = false;
+    }
+
+    public void DelayStopBall()
+    {
+        Invoke("StopEnergyBall", 20f);
     }
 }

@@ -6934,6 +6934,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   Cube: {fileID: 8808481696372890705, guid: eeed06a4249db5e46a98ab1e76965377, type: 3}
+  EnergyBall: {fileID: 595753854484156008, guid: 9fc281584b270904eafa69089b28d41b, type: 3}
   turnSmoothTime: 0.1
   Jump_particles: {fileID: 333483062}
   animator: {fileID: 713808923}
@@ -6941,6 +6942,9 @@ MonoBehaviour:
   craftmenu: {fileID: 161715214}
   wallEnabled: 0
   sprintEnabled: 0
+  doubleJumpEnabled: 0
+  energyBallEnabled: 0
+  shootForce: 1000
 --- !u!143 &161715210
 CharacterController:
   m_ObjectHideFlags: 0
@@ -34736,7 +34740,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701576002}
-  m_LocalRotation: {x: -0.12237486, y: -0.6574229, z: 0.17451619, w: -0.7227474}
+  m_LocalRotation: {x: -0.12237486, y: -0.65742284, z: 0.17451619, w: -0.72274745}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -45067,7 +45071,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.12237486, y: -0.6574229, z: 0.17451619, w: -0.7227474}
+  m_LocalRotation: {x: -0.12237486, y: -0.65742284, z: 0.17451619, w: -0.72274745}
   m_LocalPosition: {x: -3.1053214, y: 1.5686947, z: -0.37785387}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -86017,7 +86021,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953533063}
-  m_LocalRotation: {x: -0.1055773, y: -0.661294, z: 0.15921983, w: -0.7253915}
+  m_LocalRotation: {x: -0.1055773, y: -0.661294, z: 0.15921983, w: -0.72539157}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
