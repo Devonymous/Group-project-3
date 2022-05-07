@@ -36,7 +36,7 @@ public class PotionsList : MonoBehaviour
     {
         SelectPotion();    // Which potion is selected in the HUD
         NoMorePotionCheck();    // Are any potions missing
-      
+        movementScript.ShootEnergyBall();
         if (Input.GetKey(KeyCode.Tab))    // Potion gets activated by TAB
         {
             if(slots[selectedPotion].enabled == true)    // Checks if the selected slot has potion in it
@@ -45,7 +45,7 @@ public class PotionsList : MonoBehaviour
                 if (activatedPotion.id == 3)     // Enables the ability 
                 {
                     movementScript.energyBallEnabled = true;
-                    movementScript.ShootEnergyBall();
+
                     movementScript.DelayStopBall();
                     //StartCoroutine(AbilityTimer(movementScript.sprintEnabled));
                 }
