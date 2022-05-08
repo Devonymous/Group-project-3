@@ -36,37 +36,33 @@ public class PotionsList : MonoBehaviour
     {
         SelectPotion();    // Which potion is selected in the HUD
         NoMorePotionCheck();    // Are any potions missing
-        movementScript.ShootEnergyBall();
+
         if (Input.GetKey(KeyCode.Tab))    // Potion gets activated by TAB
         {
             if(slots[selectedPotion].enabled == true)    // Checks if the selected slot has potion in it
             {
-                FindPotionByID(selectedPotion);    // Finds a potion by ID and removes it from the list
-                if (activatedPotion.id == 3)     // Enables the ability 
+                FindPotionByID(selectedPotion);         // Finds a potion by ID and removes it from the list
+
+                if (activatedPotion.id == 3)                // Enables the ability 
                 {
                     movementScript.energyBallEnabled = true;
-
                     movementScript.DelayStopBall();
-                    //StartCoroutine(AbilityTimer(movementScript.sprintEnabled));
                 }
-                if (activatedPotion.id == 2)    // Enables the ability 
+                if (activatedPotion.id == 2)                // Enables the ability 
                 {
                     movementScript.wallEnabled = true;
                     movementScript.DelayStopWall();
-                    //StartCoroutine(AbilityTimer(movementScript.wallEnabled));
                 }
-                if (activatedPotion.id == 1)    // Enables the ability 
+                if (activatedPotion.id == 1)                // Enables the ability 
                 {
                     movementScript.doubleJumpEnabled = true;
                     movementScript.DelayStopDoubleJump();
-                    //StartCoroutine(AbilityTimer(movementScript.wallEnabled));
                 }
                 if (activatedPotion.id == 0 && movementScript.sprintEnabled == false)     // Enables the ability 
                 {
                     movementScript.sprintEnabled = true;
                     movementScript.Sprinting();
                     movementScript.DelayStopSprint();
-                    //StartCoroutine(AbilityTimer(movementScript.sprintEnabled));
                 }
             }
         }
@@ -84,13 +80,6 @@ public class PotionsList : MonoBehaviour
                 Debug.Log("Potion Removed");
             }
         }
-    }
-
-    IEnumerator AbilityTimer(bool ability)
-    {
-        ability = false;
-        yield return new WaitForSeconds(20f);
-        Debug.Log("Ability stopped");
     }
 
     // UI FUNCTIONS ----------------------------------------------------------------

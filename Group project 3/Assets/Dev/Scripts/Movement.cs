@@ -67,6 +67,7 @@ public class Movement : MonoBehaviour
         Gravity();
 
         Wall();
+        ShootEnergyBall();
     }
 
     void Jump()
@@ -217,7 +218,7 @@ public class Movement : MonoBehaviour
     //Energy Ball
     public void ShootEnergyBall()
     {
-        if (Input.GetKeyDown(KeyCode.N) && ballSpawned == false) //&& energyBallEnabled == true)
+        if (Input.GetKeyDown(KeyCode.N) && ballSpawned == false && energyBallEnabled == true)
         {
             ballSpawned = true;
             ball = GameObject.Instantiate(EnergyBall, spawn.transform.position, transform.rotation);
