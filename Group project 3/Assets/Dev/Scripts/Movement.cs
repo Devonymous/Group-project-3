@@ -35,7 +35,9 @@ public class Movement : MonoBehaviour
     public bool doubleJumpEnabled = false;
     public bool energyBallEnabled = false;
 
+    GameObject ball;
     public float shootForce = 1000f;
+    bool ballSpawned = false;
 
     void Start()
     {
@@ -48,6 +50,10 @@ public class Movement : MonoBehaviour
     }
     void Update()
     {
+        if(ball == null)
+        {
+            ballSpawned = false;
+        }
         if (animator.GetBool("IsOpen") == true || craftmenu.Open_inv == true || PauseMenu.isPaused == true)
         {
 
@@ -211,11 +217,13 @@ public class Movement : MonoBehaviour
     //Energy Ball
     public void ShootEnergyBall()
     {
-        if (Input.GetKeyDown(KeyCode.N) && energyBallEnabled == true)
+        if (Input.GetKeyDown(KeyCode.N) && ballSpawned == false) //&& energyBallEnabled == true)
         {
-            GameObject ball = GameObject.Instantiate(EnergyBall, spawn.transform.position, transform.rotation);
+            ballSpawned = true;
+            ball = GameObject.Instantiate(EnergyBall, spawn.transform.position, transform.rotation);
             ball.GetComponent<Rigidbody>().AddForce(transform.forward * shootForce);
-            Destroy(ball, 3f);
+            Destroy(ball, 1.5f);
+
         }
     }
 
