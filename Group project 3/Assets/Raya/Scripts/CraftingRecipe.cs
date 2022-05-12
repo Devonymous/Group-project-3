@@ -58,7 +58,7 @@ public class CraftingRecipe : MonoBehaviour
         if (craftable)
         {
             // Puts the crafted potion in the HUD
-            GameObject HUD = GameObject.Find("HUD (1)");
+            GameObject HUD = GameObject.Find("HUD");
             PotionsList PL = HUD.GetComponent<PotionsList>();
             PL.PotionToHUD(PL.Potions, finalPotion);
 
