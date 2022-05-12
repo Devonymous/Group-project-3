@@ -30,14 +30,18 @@ public class Movement : MonoBehaviour
     public Animator animator, moving;
     public CraftMenu craftmenu;
 
-    public bool wallEnabled = false;
-    public bool sprintEnabled = false;
-    public bool doubleJumpEnabled = false;
-    public bool energyBallEnabled = false;
+    [HideInInspector] public bool wallEnabled = false;
+    [HideInInspector] public bool sprintEnabled = false;
+    [HideInInspector] public bool doubleJumpEnabled = false;
+    [HideInInspector] public bool energyBallEnabled = false;
+    public bool healingEnabled = false;
 
     GameObject ball;
     public float shootForce = 1000f;
     bool ballSpawned = false;
+
+    public GameObject healing;
+
 
     void Start()
     {
@@ -68,6 +72,7 @@ public class Movement : MonoBehaviour
 
         Wall();
         ShootEnergyBall();
+        Healing();
     }
 
     void Jump()
@@ -236,5 +241,24 @@ public class Movement : MonoBehaviour
     public void DelayStopBall()
     {
         Invoke("StopEnergyBall", 20f);
+    }
+
+    //Healing
+    public void Healing()
+    {
+        if (healingEnabled)
+        {
+            healing.SetActive(true); 
+        }
+    }
+    public void StopHealing()
+    {
+        healingEnabled = false;
+        healing.SetActive(false);
+    }
+
+    public void DelayStopHealing()
+    {
+        Invoke("StopHealing", 20f);
     }
 }

@@ -43,6 +43,11 @@ public class PotionsList : MonoBehaviour
             {
                 FindPotionByID(selectedPotion);         // Finds a potion by ID and removes it from the list
 
+                if (activatedPotion.id == 4)                // Enables the ability 
+                {
+                    movementScript.healingEnabled = true;
+                    movementScript.DelayStopHealing();
+                }
                 if (activatedPotion.id == 3)                // Enables the ability 
                 {
                     movementScript.energyBallEnabled = true;
