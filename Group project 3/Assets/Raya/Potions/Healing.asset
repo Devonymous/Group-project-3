@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4763727f8b06b124fbcdccd12c631318, type: 3}
   m_Name: Healing
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: d58b72d53e339894e8d94821ec90ac44, type: 3}
+  icon: {fileID: 21300000, guid: a82e7315bd303c44b89398047d680044, type: 3}
   ingr1: {fileID: 11400000, guid: 29f6f0bd8f43335439270d755eb1e06c, type: 2}
   ingr2: {fileID: 11400000, guid: cab6cf58636ebca49b92524220a1cb5b, type: 2}
   kind: Healing

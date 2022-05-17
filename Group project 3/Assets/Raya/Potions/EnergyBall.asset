@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4763727f8b06b124fbcdccd12c631318, type: 3}
   m_Name: EnergyBall
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: afe7a84cb924d86488bee8421c6330bc, type: 3}
+  icon: {fileID: 21300000, guid: 93e0fcd1a6bf2174fa72fbe1b331378c, type: 3}
   ingr1: {fileID: 11400000, guid: 9a3db5896eac3104698f5aa09b70d2f8, type: 2}
   ingr2: {fileID: 11400000, guid: b752bc7e074580544be83b084ee05866, type: 2}
   kind: EnergyBall
