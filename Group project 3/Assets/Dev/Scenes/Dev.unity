@@ -1786,6 +1786,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -92
       objectReference: {fileID: 0}
+    - target: {fileID: 1113502901669582283, guid: d24a47c236ce4174da9482a653dc735a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113502901669582283, guid: d24a47c236ce4174da9482a653dc735a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1060494622}
+    - target: {fileID: 1113502901669582283, guid: d24a47c236ce4174da9482a653dc735a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113502901669582283, guid: d24a47c236ce4174da9482a653dc735a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1113502901759235200, guid: d24a47c236ce4174da9482a653dc735a, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -7250,7 +7266,9 @@ MonoBehaviour:
   sprintEnabled: 0
   doubleJumpEnabled: 0
   energyBallEnabled: 0
+  healingEnabled: 0
   shootForce: 1000
+  healing: {fileID: 0}
 --- !u!143 &161715210
 CharacterController:
   m_ObjectHideFlags: 0
@@ -87225,7 +87243,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953533063}
-  m_LocalRotation: {x: -0.1055773, y: -0.661294, z: 0.15921983, w: -0.7253915}
+  m_LocalRotation: {x: -0.1055773, y: -0.661294, z: 0.15921983, w: -0.72539157}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -96307,6 +96325,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4317706172340831851, guid: a0fd584095324bf40b70ee1f27748d97, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 113.76345
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317706172553156284, guid: a0fd584095324bf40b70ee1f27748d97, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 112.16158
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317706172553156284, guid: a0fd584095324bf40b70ee1f27748d97, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4317706172875492268, guid: a0fd584095324bf40b70ee1f27748d97, type: 3}
       propertyPath: m_Name
       value: Tutorial
@@ -96354,6 +96384,22 @@ PrefabInstance:
     - target: {fileID: 4317706172875492271, guid: a0fd584095324bf40b70ee1f27748d97, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317706172884488257, guid: a0fd584095324bf40b70ee1f27748d97, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 85.82873
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317706172884488257, guid: a0fd584095324bf40b70ee1f27748d97, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317706173380469835, guid: a0fd584095324bf40b70ee1f27748d97, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 84.39402
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317706173380469835, guid: a0fd584095324bf40b70ee1f27748d97, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0fd584095324bf40b70ee1f27748d97, type: 3}

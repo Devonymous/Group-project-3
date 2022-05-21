@@ -102,7 +102,7 @@ public class Movement : MonoBehaviour
                 velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
                 Doublejump++;
             }
-            if (!isGrounded && Doublejump == 1 && doubleJumpEnabled) // 2nd jump
+            if (!isGrounded && Doublejump == 1) // 2nd jump && doubleJumpEnabled
             {
                 moving.SetBool("IsDouble", true);
                 velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
@@ -167,7 +167,7 @@ public class Movement : MonoBehaviour
     //Sprinting
     public void Sprinting() 
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && sprintEnabled == true) // sprint
+        if (Input.GetKeyDown(KeyCode.LeftShift) ) // sprint&& sprintEnabled == true
         {
             speed = Sprint;
             Particles.emitting = true;

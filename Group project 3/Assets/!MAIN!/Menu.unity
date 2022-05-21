@@ -1090,9 +1090,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1871754013}
+        - m_Target: {fileID: 1592085825}
           m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-          m_MethodName: Gomain
+          m_MethodName: Quit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

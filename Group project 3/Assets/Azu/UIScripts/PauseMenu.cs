@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using Cinemachine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
@@ -55,6 +56,11 @@ public class PauseMenu : MonoBehaviour
 
             Camera.SetActive(false);
         }
+    
+    public void Quit()
+    {
+        Application.Quit();
+    }
     public void ResumeGame()
         {
             pauseMenu.SetActive(false);
