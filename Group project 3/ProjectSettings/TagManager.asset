@@ -19,6 +19,7 @@ TagManager:
   - UI
   - Breakable
   - Item
+  - Pillar
   layers:
   - Default
   - TransparentFX
@@ -29,7 +30,7 @@ TagManager:
   - Ground
   - test
   - FogOfWarMain
-  - 
+  - Puzzle
   - MiniMap
   - 
   - 
