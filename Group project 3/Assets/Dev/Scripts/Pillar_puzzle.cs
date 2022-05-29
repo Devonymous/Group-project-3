@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Pillar_puzzle : MonoBehaviour
 {
+    public bool Pressed = false;
     MeshRenderer boop;
     public Material red,norm;
     void Start()
@@ -16,10 +17,12 @@ public class Pillar_puzzle : MonoBehaviour
         if (other.gameObject.tag == "Pillar")
         {
             boop.material = red;
+            Pressed = true;
         }
     }
     void OnTriggerExit(Collider other)
     {
         boop.material = norm;
+        Pressed = false;
     }
 }

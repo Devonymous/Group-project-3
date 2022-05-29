@@ -50,7 +50,6 @@ public class Puzzle : MonoBehaviour
             if (Current_Puzzle)
             {
                 Puzzlescript.Puzzleface++;
-                Current_Puzzle.transform.Rotate(0,-90,0);
 
             }
             if (Button_Object)
