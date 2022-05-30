@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: X-Ray-Vision
+  m_Shader: {fileID: -6465566751694194690, guid: 7b750d24635a527408d86913db364a12, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1c4b4629f7924ec683870ef57e58d266: 3
+    - Vector1_2e7405702a6d422ba05b664a96523262: 0.98
+    - Vector1_3f35f38d05994c3286a0c548b8a42b5f: 10
+    - Vector1_c415f5ed16eb41c884d536b17f70579f: 0.5
+    m_Colors:
+    - Color_cbfd7fcabbe149218c014a7e4c03cf99: {r: 1, g: 1, b: 1, a: 1}
+    - Vector2_36589e480a914ebbb0fb1b398dcb84da: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_cd6ac217362849d18ecdce10fdd18b33: {r: 0.5, g: 30, b: 0, a: 0}
+  m_BuildTextureStacks: []
