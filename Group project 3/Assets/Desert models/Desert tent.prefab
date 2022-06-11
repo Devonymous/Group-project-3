@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5794284292940166131}
   - component: {fileID: 7477863553049689174}
   - component: {fileID: 4621328743393986716}
+  - component: {fileID: 4855924907477214859}
   m_Layer: 0
   m_Name: Desert tent
   m_TagString: Untagged
@@ -85,3 +86,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4855924907477214859
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6567020603140909385}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7196802604745430461, guid: 4100951d29389394ba843871c9901ba9, type: 3}
