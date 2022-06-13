@@ -12,8 +12,8 @@ public class Movement : MonoBehaviour
     public PauseMenu PauseMenu;
 
     public float speed = 13, gravity = -19.62f, jumpHeight = 3, Sprint, Walk, P_rate;
-    Vector3 velocity;
-    bool isGrounded, isRunning;
+    public Vector3 velocity;
+    public bool isGrounded, isRunning;
 
 
     public Transform groundCheck;

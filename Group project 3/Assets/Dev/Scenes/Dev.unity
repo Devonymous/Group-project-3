@@ -21917,7 +21917,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391164951}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa186381c3baeab48b0275a8d113a79f, type: 3}
   m_Name: 
@@ -67350,7 +67350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 63938294, guid: 8dabd1462bdc35840a27e63af4452b31, type: 3}
       propertyPath: dialogue.sentences.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 63938294, guid: 8dabd1462bdc35840a27e63af4452b31, type: 3}
       propertyPath: dialogue.sentences2.Array.size
@@ -67367,6 +67367,16 @@ PrefabInstance:
     - target: {fileID: 63938294, guid: 8dabd1462bdc35840a27e63af4452b31, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
       value: One day, we will witness the great Butterfly. I wonder what is its name...
+      objectReference: {fileID: 0}
+    - target: {fileID: 63938294, guid: 8dabd1462bdc35840a27e63af4452b31, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: HelloHelloHello HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello
+        HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello
+        HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello
+      objectReference: {fileID: 0}
+    - target: {fileID: 63938294, guid: 8dabd1462bdc35840a27e63af4452b31, type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: Bye ByeByeByeByeByeByeByeByeBye ByeByeByeByeByeByeByeBye
       objectReference: {fileID: 0}
     - target: {fileID: 63938294, guid: 8dabd1462bdc35840a27e63af4452b31, type: 3}
       propertyPath: dialogue.sentences2.Array.data[0]
@@ -85088,7 +85098,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953533063}
-  m_LocalRotation: {x: -0.1055773, y: -0.661294, z: 0.15921983, w: -0.7253915}
+  m_LocalRotation: {x: -0.1055773, y: -0.661294, z: 0.15921983, w: -0.72539157}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

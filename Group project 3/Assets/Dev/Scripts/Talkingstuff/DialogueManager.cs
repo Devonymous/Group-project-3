@@ -8,10 +8,11 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
     public Text nametext;
     public Text dialoguetext;
-    private Queue<string> sentences;
+    public Queue<string> sentences;
     public GameObject UI1;
     public GameObject Cam;
-    public bool Istalking = false;
+    public bool Istalking = false, Letters = false;
+
     void Start()
     {
         sentences = new Queue<string>();
@@ -39,10 +40,18 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
-
-        string sentence = sentences.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        if (!Letters)
+        {
+            string sentence = sentences.Dequeue();
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(sentence));
+        } else 
+        {
+            StopAllCoroutines();
+            dialoguetext.text = "";
+            dialoguetext.text = sentences.ToString();
+            Letters = false;
+        }
     }
 
     IEnumerator TypeSentence (string sentence)
@@ -50,9 +59,11 @@ public class DialogueManager : MonoBehaviour
         dialoguetext.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
+            Letters = true;
             dialoguetext.text += letter;
             yield return null;
         }
+        Letters = false;
     }
 
     void EndDialogue()
