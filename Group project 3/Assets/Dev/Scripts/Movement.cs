@@ -35,6 +35,7 @@ public class Movement : MonoBehaviour
     [HideInInspector] public bool doubleJumpEnabled = false;
     [HideInInspector] public bool energyBallEnabled = false;
     public bool healingEnabled = false;
+    public bool IsGliding = false;
 
     GameObject ball;
     public float shootForce = 1000f;
@@ -74,8 +75,16 @@ public class Movement : MonoBehaviour
         Wall();
         ShootEnergyBall();
         Healing();
+        Gliding();
     }
-
+    void Gliding()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            IsGliding = true;
+            gravity = -2;
+        } 
+    }
     void Jump()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -83,11 +92,14 @@ public class Movement : MonoBehaviour
         {
             Doublejump = 0;
             gravity = -19.62f;
-
+            IsGliding = false;
         }
         else
         {
-            gravity = gravity + (gravity * 0.003f);
+            if (IsGliding == false)
+            {
+                gravity = gravity + (gravity * 0.003f);
+            }
         }
         if (isGrounded && velocity.y < 1)
         {
