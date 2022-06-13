@@ -16,7 +16,7 @@ public class Puzzle : MonoBehaviour
         {   
             Object_text.SetActive(true);
             Show_text = Object_text.GetComponent<Text>();
-            Show_text.text = "Rotate";
+            Show_text.text = "Change";
             Current_Puzzle = other.gameObject;
             Puzzlescript = Current_Puzzle.GetComponent<Puzzle_Piece>();
         }
@@ -50,6 +50,7 @@ public class Puzzle : MonoBehaviour
             if (Current_Puzzle)
             {
                 Puzzlescript.Puzzleface++;
+                Current_Puzzle.transform.Rotate(0, 90, 0);
 
             }
             if (Button_Object)
