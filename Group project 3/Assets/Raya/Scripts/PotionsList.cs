@@ -53,10 +53,15 @@ public class PotionsList : MonoBehaviour
                     movementScript.energyBallEnabled = true;
                     movementScript.DelayStopBall();
                 }
+                //if (activatedPotion.id == 2)                // Enables the ability 
+                //{
+                //    movementScript.wallEnabled = true;
+                //    movementScript.DelayStopWall();
+                //}
                 if (activatedPotion.id == 2)                // Enables the ability 
                 {
-                    movementScript.wallEnabled = true;
-                    movementScript.DelayStopWall();
+                    movementScript.floatingStoneEnabled = true;
+                    movementScript.DelayStopStone();
                 }
                 if (activatedPotion.id == 1)                // Enables the ability 
                 {
@@ -104,7 +109,6 @@ public class PotionsList : MonoBehaviour
     // Selects/Highlights a potion from the HUD
     void SelectPotion()
     {
-        slots[0].transform.parent.gameObject.GetComponent<Image>().color = Color.green;
         for (int j = 0; j < keyCodes.Length; j++)
         {
             if (Input.GetKeyDown(keyCodes[j]))
