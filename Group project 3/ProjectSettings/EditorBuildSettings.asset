@@ -14,7 +14,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/!MAIN!/OLDOLDMain.unity
+    guid: 2d617dd17fcf4974bb625f6531a74269
   - enabled: 1
     path: Assets/!MAIN!/Main.unity
-    guid: 2d617dd17fcf4974bb625f6531a74269
+    guid: 96febd9ff9d790a4997d29467e52d0fb
   m_configObjects: {}
