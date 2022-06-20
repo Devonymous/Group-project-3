@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 8892147258310690731}
   - component: {fileID: 6030442555738472161}
   - component: {fileID: 7103818925507582581}
-  m_Layer: 0
+  - component: {fileID: 2688340574185468959}
+  m_Layer: 6
   m_Name: platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,6 +82,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2688340574185468959
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419239041956615312}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6519165, y: 0.19259644, z: 1.5876465}
+  m_Center: {x: -0.08984506, y: 0.34126097, z: -0.06924343}
 --- !u!1 &8403098560183249837
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +106,7 @@ GameObject:
   - component: {fileID: 8403098560183249836}
   - component: {fileID: 8403098560183249838}
   - component: {fileID: 8403098560183249839}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: holloplatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +187,7 @@ GameObject:
   - component: {fileID: 8403098560345665887}
   - component: {fileID: 8403098560345665873}
   - component: {fileID: 8403098560345665886}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4975,7 +4989,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8293225757814011635}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: floatingplatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

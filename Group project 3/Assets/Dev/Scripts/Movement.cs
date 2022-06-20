@@ -34,6 +34,7 @@ public class Movement : MonoBehaviour
     [HideInInspector] public bool sprintEnabled = false;
     [HideInInspector] public bool doubleJumpEnabled = false;
     [HideInInspector] public bool energyBallEnabled = false;
+    [HideInInspector] public bool floatingStoneEnabled;
     public bool healingEnabled = false;
     public bool IsGliding = false;
 
@@ -43,7 +44,8 @@ public class Movement : MonoBehaviour
 
     public GameObject healing;
 
-
+    [SerializeField] GameObject floatingStonePos;
+    [SerializeField] GameObject floatingStone;
 
     void Start()
     {
@@ -53,10 +55,13 @@ public class Movement : MonoBehaviour
         Walk = speed;
         spawn = GameObject.FindGameObjectWithTag("Spawn");
         craftmenu = GetComponent<CraftMenu>();
+
+        floatingStonePos.SetActive(false);
+        floatingStoneEnabled = false;
     }
     void Update()
     {
-        if(ball == null)
+        if (ball == null)
         {
             ballSpawned = false;
         }
@@ -76,6 +81,7 @@ public class Movement : MonoBehaviour
         ShootEnergyBall();
         Healing();
         Gliding();
+        SpawnFloatingStone();
     }
     void Gliding()
     {
@@ -83,7 +89,7 @@ public class Movement : MonoBehaviour
         {
             IsGliding = true;
             gravity = -2;
-        } 
+        }
     }
     void Jump()
     {
@@ -177,10 +183,10 @@ public class Movement : MonoBehaviour
 
     //ABILITIES -----------------------------------------------------------------------------------
 
-    //Sprinting
-    public void Sprinting() 
+    #region Sprinting
+    public void Sprinting()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) ) // sprint&& sprintEnabled == true
+        if (Input.GetKeyDown(KeyCode.LeftShift)) // sprint&& sprintEnabled == true
         {
             speed = Sprint;
             Particles.emitting = true;
@@ -203,7 +209,9 @@ public class Movement : MonoBehaviour
         Invoke("StopSprint", 20f);
     }
 
-    // Double Jump
+    #endregion
+
+    #region Double Jump
     void StopDoubleJump()
     {
         doubleJumpEnabled = false;
@@ -214,7 +222,9 @@ public class Movement : MonoBehaviour
         Invoke("StopDoubleJump", 20f);
     }
 
-    // Creating Walls
+    #endregion
+
+    #region Creating Walls
     public void Wall()
     {
         if (Input.GetKeyDown(KeyCode.M) && wallEnabled == true)
@@ -233,7 +243,9 @@ public class Movement : MonoBehaviour
         Invoke("StopWall", 20f);
     }
 
-    //Energy Ball
+    #endregion
+
+    #region Energy Ball
     public void ShootEnergyBall()
     {
         if (Input.GetKeyDown(KeyCode.N) && ballSpawned == false && energyBallEnabled == true)
@@ -256,12 +268,14 @@ public class Movement : MonoBehaviour
         Invoke("StopEnergyBall", 20f);
     }
 
-    //Healing
+    #endregion
+
+    #region Healing
     public void Healing()
     {
         if (healingEnabled)
         {
-            healing.SetActive(true); 
+            healing.SetActive(true);
         }
     }
     public void StopHealing()
@@ -273,5 +287,30 @@ public class Movement : MonoBehaviour
     public void DelayStopHealing()
     {
         Invoke("StopHealing", 20f);
+    }
+
+    #endregion
+
+    //Floating Rock
+    public void SpawnFloatingStone()
+    {
+        if (floatingStoneEnabled == true)
+        {
+            floatingStonePos.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.P))// && wallEnabled == true)
+            {
+                Instantiate(floatingStone, floatingStonePos.transform.position, transform.rotation);
+            }
+        }
+    }
+
+    public void StopStone()
+    {
+        floatingStoneEnabled = false;
+    }
+
+    public void DelayStopStone()
+    {
+        Invoke("StopStone", 20f);
     }
 }

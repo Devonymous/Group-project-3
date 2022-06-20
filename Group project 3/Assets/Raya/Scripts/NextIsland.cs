@@ -8,7 +8,7 @@ public class NextIsland : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("Touchingggg");
+            //Debug.Log("Touchingggg");
             CharacterController cc = col.GetComponent<CharacterController>();
 
             cc.enabled = false;
