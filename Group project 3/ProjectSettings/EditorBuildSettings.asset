@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Hidde/Scenes/Hidde.unity
     guid: cd6a8edbe7dd53f4bb93bd2cd2cc4246
-  - enabled: 0
+  - enabled: 1
     path: Assets/!MAIN!/Menu.unity
     guid: 9c50a3934aa01814ba04ada0808b46fe
   - enabled: 0
