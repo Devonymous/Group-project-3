@@ -42,6 +42,7 @@ public class Movement : MonoBehaviour
     public bool floatingStoneEnabled;
     public bool healingEnabled = false;
     public bool IsGliding = false;
+    bool isHealing = false;
 
     GameObject ball;
     public float shootForce = 1300f;
@@ -288,9 +289,15 @@ public class Movement : MonoBehaviour
     #region Healing
     public void Healing()
     {
-        if (healingEnabled)
+        if (healingEnabled && isHealing == false)
         {
             healing.SetActive(true);
+            if (isHealing == false)
+            {
+                audioSrc = healing.GetComponent<AudioSource>();
+                audioSrc.Play();
+            }
+            isHealing = true;
         }
     }
     public void StopHealing()

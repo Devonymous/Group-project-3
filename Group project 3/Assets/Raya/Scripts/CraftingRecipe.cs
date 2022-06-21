@@ -14,7 +14,12 @@ public class CraftingRecipe : MonoBehaviour
     public Sprite notAvailable;
     bool craftable = false;
 
+    AudioSource audioSrc;
 
+    private void Start()
+    {
+        audioSrc = GetComponent<AudioSource>();
+    }
     // Opens the recipe and checks if it is craftable
     public void RecipePotion()
     {
@@ -57,6 +62,8 @@ public class CraftingRecipe : MonoBehaviour
     {
         if (craftable)
         {
+            audioSrc.Play();
+
             // Puts the crafted potion in the HUD
             GameObject HUD = GameObject.Find("HUD");
             PotionsList PL = HUD.GetComponent<PotionsList>();
