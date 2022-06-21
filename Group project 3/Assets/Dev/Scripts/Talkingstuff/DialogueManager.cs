@@ -39,18 +39,11 @@ public class DialogueManager : MonoBehaviour
         {
             EndDialogue();
             return;
-        }
-        if (!Letters)
+        } else
         {
             string sentence = sentences.Dequeue();
             StopAllCoroutines();
             StartCoroutine(TypeSentence(sentence));
-        } else 
-        {
-            StopAllCoroutines();
-            dialoguetext.text = "";
-            dialoguetext.text = sentences.ToString();
-            Letters = false;
         }
     }
 
