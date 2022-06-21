@@ -30,22 +30,30 @@ public class Movement : MonoBehaviour
     public Animator animator, moving;
     public CraftMenu craftmenu;
 
-    [HideInInspector] public bool wallEnabled = false;
-    [HideInInspector] public bool sprintEnabled = false;
-    [HideInInspector] public bool doubleJumpEnabled = false;
-    [HideInInspector] public bool energyBallEnabled = false;
-    [HideInInspector] public bool floatingStoneEnabled;
+    //[HideInInspector]
+    public bool wallEnabled = false;
+    //[HideInInspector] 
+    public bool sprintEnabled = false;
+    //[HideInInspector] 
+    public bool doubleJumpEnabled = false;
+    //[HideInInspector] 
+    public bool energyBallEnabled = false;
+    //[HideInInspector] 
+    public bool floatingStoneEnabled;
     public bool healingEnabled = false;
     public bool IsGliding = false;
 
     GameObject ball;
-    public float shootForce = 1000f;
+    public float shootForce = 1300f;
     bool ballSpawned = false;
 
     public GameObject healing;
 
     [SerializeField] GameObject floatingStonePos;
     [SerializeField] GameObject floatingStone;
+
+    public AudioSource audioSrc;
+
 
     void Start()
     {
@@ -58,6 +66,8 @@ public class Movement : MonoBehaviour
 
         floatingStonePos.SetActive(false);
         floatingStoneEnabled = false;
+
+        //audioSrc = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -251,21 +261,26 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.N) && ballSpawned == false && energyBallEnabled == true)
         {
             ballSpawned = true;
-            ball = GameObject.Instantiate(EnergyBall, spawn.transform.position, transform.rotation);
-            ball.GetComponent<Rigidbody>().AddForce(transform.forward * shootForce);
-            Destroy(ball, 1.5f);
+            EnergyBall.SetActive(true);
+            audioSrc = EnergyBall.GetComponent<AudioSource>();
+            audioSrc.Play();
+            //ball = GameObject.Instantiate(EnergyBall, spawn.transform.position, transform.rotation);
+            EnergyBall.GetComponent<Rigidbody>().AddForce(transform.forward * shootForce);
+            //Destroy(ball, 1.5f);
 
         }
     }
 
     void StopEnergyBall()
     {
+        ballSpawned = false;
         energyBallEnabled = false;
+        EnergyBall.SetActive(false);
     }
 
     public void DelayStopBall()
     {
-        Invoke("StopEnergyBall", 20f);
+        Invoke("StopEnergyBall", 1f);
     }
 
     #endregion
@@ -307,6 +322,7 @@ public class Movement : MonoBehaviour
     public void StopStone()
     {
         floatingStoneEnabled = false;
+        floatingStonePos.SetActive(true);
     }
 
     public void DelayStopStone()
