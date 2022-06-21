@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class NextIsland : MonoBehaviour
 {
+    public Transform positionTeleport;
     private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
-            //Debug.Log("Touchingggg");
             CharacterController cc = col.GetComponent<CharacterController>();
 
             cc.enabled = false;
-            col.transform.position = new Vector3(128, 245, -380);
+            col.transform.position = positionTeleport.position;
             cc.enabled = true;
         }
     }
